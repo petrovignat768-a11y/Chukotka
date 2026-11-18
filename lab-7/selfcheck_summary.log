@@ -1,0 +1,39 @@
+Созданы данные: положительных=12, отрицательных=3, массовых=100
+Это не запуск тестируемого приложения и не результаты RFT.
+
+test_csv_special_characters_round_trip (__main__.DataTests.test_csv_special_characters_round_trip) ... ok
+test_duplicate_is_present (__main__.DataTests.test_duplicate_is_present) ... ok
+test_headers (__main__.DataTests.test_headers) ... ok
+test_mass_count_and_order (__main__.DataTests.test_mass_count_and_order) ... ok
+test_negative_whitespace_and_warning (__main__.DataTests.test_negative_whitespace_and_warning) ... ok
+test_positive_count_and_ids (__main__.DataTests.test_positive_count_and_ids) ... ok
+test_positive_nonempty_and_expected (__main__.DataTests.test_positive_nonempty_and_expected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+PASS add-empty
+PASS add-tail
+PASS add-duplicate
+PASS mark-middle
+PASS delete-middle
+PASS unchanged
+PASS empty-input
+PASS warning
+PASS detect-no-added-record (ожидаемое обнаружение расхождения)
+PASS detect-wrong-text (ожидаемое обнаружение расхождения)
+PASS detect-changed-previous (ожидаемое обнаружение расхождения)
+PASS detect-wrong-marked-row (ожидаемое обнаружение расхождения)
+PASS detect-wrong-delete (ожидаемое обнаружение расхождения)
+PASS detect-unwanted-mutation (ожидаемое обнаружение расхождения)
+PASS detect-not-empty (ожидаемое обнаружение расхождения)
+PASS detect-wrong-warning (ожидаемое обнаружение расхождения)
+ИТОГО: 16 самопроверок оракула; EXE и RFT не тестировались.
+
+generation=0 CSV-tests=0 compilation=0 oracle-tests=0

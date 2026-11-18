@@ -1,0 +1,276 @@
+=== COVERAGE CONFIGURE ===
+UTC 2026-11-18T08:55:01Z
+gcov (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ubuntu/labs_2_8/lab-4/build-coverage
+=== COVERAGE BUILD ===
+[ 25%] [32mBuilding CXX object CMakeFiles/task_tracker.dir/src/task_tracker.cpp.o[0m
+[ 50%] [32m[1mLinking CXX static library libtask_tracker.a[0m
+[ 50%] Built target task_tracker
+[ 75%] [32mBuilding CXX object CMakeFiles/task_tracker_tests.dir/tests/task_tracker_test.cpp.o[0m
+[100%] [32m[1mLinking CXX executable task_tracker_tests[0m
+[100%] Built target task_tracker_tests
+=== COVERAGE TEST RUN ===
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 42 tests from 9 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from TaskTrackerBasics
+[ RUN      ] TaskTrackerBasics.StartsEmpty
+[       OK ] TaskTrackerBasics.StartsEmpty (0 ms)
+[ RUN      ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks
+[       OK ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks (0 ms)
+[ RUN      ] TaskTrackerBasics.ResultMessagesMatchSpecification
+[       OK ] TaskTrackerBasics.ResultMessagesMatchSpecification (0 ms)
+[ RUN      ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies
+[       OK ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies (0 ms)
+[ RUN      ] TaskTrackerBasics.PreservesEmbeddedNulBytes
+[       OK ] TaskTrackerBasics.PreservesEmbeddedNulBytes (0 ms)
+[ RUN      ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks
+[       OK ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks (0 ms)
+[----------] 6 tests from TaskTrackerBasics (0 ms total)
+
+[----------] 4 tests from PopulatedTrackerTest
+[ RUN      ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering
+[       OK ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering (0 ms)
+[ RUN      ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask
+[       OK ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask (0 ms)
+[ RUN      ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField
+[       OK ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField (0 ms)
+[ RUN      ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState
+[       OK ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState (0 ms)
+[----------] 4 tests from PopulatedTrackerTest (0 ms total)
+
+[----------] 9 tests from InvalidValues/InvalidInputTest
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace (0 ms)
+[----------] 9 tests from InvalidValues/InvalidInputTest (0 ms total)
+
+[----------] 7 tests from ValidValues/ValidInputTest
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace (0 ms)
+[----------] 7 tests from ValidValues/ValidInputTest (0 ms total)
+
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First (0 ms)
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last (0 ms)
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest (0 ms total)
+
+[----------] 3 tests from Positions/DeleteValidIndexTest
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last (0 ms)
+[----------] 3 tests from Positions/DeleteValidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest (0 ms total)
+
+[----------] 3 tests from EmptyList/EmptyListSelectionTest
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex (0 ms)
+[----------] 3 tests from EmptyList/EmptyListSelectionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 9 test suites ran. (0 ms total)
+[  PASSED  ] 42 tests.
+=== GCOV ON MODEL ===
+File '/usr/include/c++/13/bits/stl_algobase.h'
+Lines executed:75.00% of 32
+Branches executed:33.33% of 6
+Taken at least once:33.33% of 6
+Calls executed:100.00% of 14
+Creating 'stl_algobase.h.gcov'
+
+File '/home/ubuntu/labs_2_8/lab-4/include/tracker/task_tracker.h'
+No executable lines
+No branches
+No calls
+Removing 'task_tracker.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_uninitialized.h'
+Lines executed:100.00% of 36
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+Calls executed:100.00% of 18
+Creating 'stl_uninitialized.h.gcov'
+
+File '/usr/include/c++/13/bits/alloc_traits.h'
+Lines executed:62.50% of 8
+No branches
+Calls executed:63.64% of 11
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/13/bits/new_allocator.h'
+Lines executed:34.38% of 32
+Branches executed:25.00% of 8
+Taken at least once:12.50% of 8
+Calls executed:75.86% of 29
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/c++/13/bits/move.h'
+Lines executed:40.00% of 20
+No branches
+No calls
+Creating 'move.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_vector.h'
+Lines executed:59.38% of 128
+Branches executed:72.73% of 22
+Taken at least once:36.36% of 22
+Calls executed:68.33% of 60
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_construct.h'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 4
+Creating 'stl_construct.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator.h'
+Lines executed:73.85% of 65
+No branches
+Calls executed:82.35% of 17
+Creating 'stl_iterator.h.gcov'
+
+File '/usr/include/c++/13/bits/cpp_type_traits.h'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'cpp_type_traits.h.gcov'
+
+File '/usr/include/c++/13/bits/vector.tcc'
+Lines executed:98.04% of 102
+Branches executed:100.00% of 10
+Taken at least once:80.00% of 10
+Calls executed:92.45% of 53
+Creating 'vector.tcc.gcov'
+
+File '/usr/include/c++/13/bits/basic_string.tcc'
+Lines executed:0.00% of 36
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 18
+Creating 'basic_string.tcc.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator_base_types.h'
+Lines executed:0.00% of 1
+No branches
+No calls
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator_base_funcs.h'
+Lines executed:0.00% of 3
+No branches
+No calls
+Creating 'stl_iterator_base_funcs.h.gcov'
+
+File '/usr/include/c++/13/bits/basic_string.h'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 9
+Creating 'basic_string.h.gcov'
+
+File '/usr/include/c++/13/bits/char_traits.h'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+Creating 'char_traits.h.gcov'
+
+File '/usr/include/c++/13/bits/allocator.h'
+Lines executed:100.00% of 2
+No branches
+Calls executed:50.00% of 2
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/13/optional'
+Lines executed:81.82% of 11
+Branches executed:66.67% of 6
+Taken at least once:33.33% of 6
+Calls executed:66.67% of 6
+Creating 'optional.gcov'
+
+File '/usr/include/c++/13/string_view'
+Lines executed:0.00% of 4
+No branches
+Calls executed:0.00% of 1
+Creating 'string_view.gcov'
+
+File '/home/ubuntu/labs_2_8/lab-4/src/task_tracker.cpp'
+Lines executed:96.23% of 53
+Branches executed:95.45% of 44
+Taken at least once:77.27% of 44
+Calls executed:88.00% of 50
+Creating 'task_tracker.cpp.gcov'
+
+File '/usr/include/c++/13/new'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'new.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'c++config.h.gcov'
+
+Lines executed:64.81% of 574

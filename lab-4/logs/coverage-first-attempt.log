@@ -1,0 +1,142 @@
+=== COVERAGE CONFIGURE ===
+UTC 2026-11-18T08:53:57Z
+gcov (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found GTest: /usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.14.0")  
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ubuntu/labs_2_8/lab-4/build-coverage
+=== COVERAGE BUILD ===
+[ 25%] [32mBuilding CXX object CMakeFiles/task_tracker.dir/src/task_tracker.cpp.o[0m
+[ 50%] [32m[1mLinking CXX static library libtask_tracker.a[0m
+[ 50%] Built target task_tracker
+[ 75%] [32mBuilding CXX object CMakeFiles/task_tracker_tests.dir/tests/task_tracker_test.cpp.o[0m
+[100%] [32m[1mLinking CXX executable task_tracker_tests[0m
+[100%] Built target task_tracker_tests
+=== COVERAGE TEST RUN ===
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 42 tests from 9 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from TaskTrackerBasics
+[ RUN      ] TaskTrackerBasics.StartsEmpty
+[       OK ] TaskTrackerBasics.StartsEmpty (0 ms)
+[ RUN      ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks
+[       OK ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks (0 ms)
+[ RUN      ] TaskTrackerBasics.ResultMessagesMatchSpecification
+[       OK ] TaskTrackerBasics.ResultMessagesMatchSpecification (0 ms)
+[ RUN      ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies
+[       OK ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies (0 ms)
+[ RUN      ] TaskTrackerBasics.PreservesEmbeddedNulBytes
+[       OK ] TaskTrackerBasics.PreservesEmbeddedNulBytes (0 ms)
+[ RUN      ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks
+[       OK ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks (0 ms)
+[----------] 6 tests from TaskTrackerBasics (0 ms total)
+
+[----------] 4 tests from PopulatedTrackerTest
+[ RUN      ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering
+[       OK ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering (0 ms)
+[ RUN      ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask
+[       OK ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask (0 ms)
+[ RUN      ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField
+[       OK ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField (0 ms)
+[ RUN      ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState
+[       OK ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState (0 ms)
+[----------] 4 tests from PopulatedTrackerTest (0 ms total)
+
+[----------] 9 tests from InvalidValues/InvalidInputTest
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace (0 ms)
+[----------] 9 tests from InvalidValues/InvalidInputTest (0 ms total)
+
+[----------] 7 tests from ValidValues/ValidInputTest
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace (0 ms)
+[----------] 7 tests from ValidValues/ValidInputTest (0 ms total)
+
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First (0 ms)
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last (0 ms)
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest (0 ms total)
+
+[----------] 3 tests from Positions/DeleteValidIndexTest
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last (0 ms)
+[----------] 3 tests from Positions/DeleteValidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest (0 ms total)
+
+[----------] 3 tests from EmptyList/EmptyListSelectionTest
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex (0 ms)
+[----------] 3 tests from EmptyList/EmptyListSelectionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 9 test suites ran. (0 ms total)
+[  PASSED  ] 42 tests.
+=== GCOV ON MODEL ===
+../../build-coverage/CMakeFiles/task_tracker.dir/src/task_tracker.gcno:cannot open notes file
+../../build-coverage/CMakeFiles/task_tracker.dir/src/task_tracker.gcda:cannot open data file, assuming not executed
+No executable lines

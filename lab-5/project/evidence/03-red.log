@@ -1,0 +1,232 @@
+$ python3 -B -m unittest discover -s tests -v
+test_centimeters_to_meters (test_converter.BasicMetricTests.test_centimeters_to_meters) ... ok
+test_meters_to_centimeters (test_converter.BasicMetricTests.test_meters_to_centimeters) ... ok
+test_cross_system_conversion (test_converter.UnitSystemTests.test_cross_system_conversion) ... ok
+test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) ... ok
+test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) ... ok
+test_si_millimeters_and_kilometers (test_converter.UnitSystemTests.test_si_millimeters_and_kilometers) ... ok
+test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) ... ok
+test_half_up_positive_and_negative_ties (test_converter.ValidationAndRoundingTests.test_half_up_positive_and_negative_ties) ... ok
+test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) ... 
+  test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=-1) ... FAIL
+  test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=9) ... FAIL
+  test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=2.5) ... ERROR
+  test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=True) ... FAIL
+  test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places='2') ... ERROR
+test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) ... 
+  test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) (value='1000000000000.1') ... FAIL
+  test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) (value='-1000000000000.1') ... FAIL
+test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) ... 
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='NaN') ... FAIL
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='Infinity') ... ERROR
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='-Infinity') ... ERROR
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='abc') ... ERROR
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='1,2') ... ERROR
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='') ... ERROR
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value=' 1 ') ... FAIL
+  test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='1_0') ... FAIL
+test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) ... 
+  test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value=1.25) ... FAIL
+  test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value=None) ... ERROR
+  test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value='00000000000000000000000000000000000000000000000000000000000000000') ... FAIL
+test_rounding_eight_places_and_trailing_zeros (test_converter.ValidationAndRoundingTests.test_rounding_eight_places_and_trailing_zeros) ... ok
+test_rounding_zero_places (test_converter.ValidationAndRoundingTests.test_rounding_zero_places) ... FAIL
+test_scientific_decimal_syntax (test_converter.ValidationAndRoundingTests.test_scientific_decimal_syntax) ... ok
+test_small_negative_rounds_to_unsigned_zero (test_converter.ValidationAndRoundingTests.test_small_negative_rounds_to_unsigned_zero) ... FAIL
+test_unknown_or_wrong_case_units (test_converter.ValidationAndRoundingTests.test_unknown_or_wrong_case_units) ... ok
+test_zero_and_negative_are_valid (test_converter.ValidationAndRoundingTests.test_zero_and_negative_are_valid) ... ok
+
+======================================================================
+ERROR: test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=2.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 83, in test_invalid_places
+    self.converter.convert('1', 'm', 'm', places)
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 23, in convert
+    return result.quantize(Decimal('1').scaleb(-places))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: conversion from float to Decimal is not supported
+
+======================================================================
+ERROR: test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places='2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 83, in test_invalid_places
+    self.converter.convert('1', 'm', 'm', places)
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 23, in convert
+    return result.quantize(Decimal('1').scaleb(-places))
+                                               ^^^^^^^
+TypeError: bad operand type for unary -: 'str'
+
+======================================================================
+ERROR: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='Infinity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 93, in test_reject_nonfinite_and_invalid_number_strings
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 23, in convert
+    return result.quantize(Decimal('1').scaleb(-places))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+decimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]
+
+======================================================================
+ERROR: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='-Infinity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 93, in test_reject_nonfinite_and_invalid_number_strings
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 23, in convert
+    return result.quantize(Decimal('1').scaleb(-places))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+decimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]
+
+======================================================================
+ERROR: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='abc')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 93, in test_reject_nonfinite_and_invalid_number_strings
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 18, in convert
+    amount = Decimal(value)
+             ^^^^^^^^^^^^^^
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+======================================================================
+ERROR: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='1,2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 93, in test_reject_nonfinite_and_invalid_number_strings
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 18, in convert
+    amount = Decimal(value)
+             ^^^^^^^^^^^^^^
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+======================================================================
+ERROR: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 93, in test_reject_nonfinite_and_invalid_number_strings
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 18, in convert
+    amount = Decimal(value)
+             ^^^^^^^^^^^^^^
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+======================================================================
+ERROR: test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 98, in test_reject_nonstring_and_overlong_input
+    self.converter.convert(value, 'm', 'm')
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 18, in convert
+    amount = Decimal(value)
+             ^^^^^^^^^^^^^^
+TypeError: conversion from NoneType to Decimal is not supported
+
+======================================================================
+FAIL: test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 82, in test_invalid_places
+    with self.subTest(places=places), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 82, in test_invalid_places
+    with self.subTest(places=places), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) (places=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 82, in test_invalid_places
+    with self.subTest(places=places), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) (value='1000000000000.1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 77, in test_range_inclusive_and_overflow
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) (value='-1000000000000.1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 77, in test_range_inclusive_and_overflow
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='NaN')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 92, in test_reject_nonfinite_and_invalid_number_strings
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value=' 1 ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 92, in test_reject_nonfinite_and_invalid_number_strings
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) (value='1_0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 92, in test_reject_nonfinite_and_invalid_number_strings
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value=1.25)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 97, in test_reject_nonstring_and_overlong_input
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) (value='00000000000000000000000000000000000000000000000000000000000000000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 97, in test_reject_nonstring_and_overlong_input
+    with self.subTest(value=value), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rounding_zero_places (test_converter.ValidationAndRoundingTests.test_rounding_zero_places)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 57, in test_rounding_zero_places
+    self.assertEqual(self.converter.convert('2.5', 'm', 'm', 0), Decimal('3'))
+AssertionError: Decimal('2') != Decimal('3')
+
+======================================================================
+FAIL: test_small_negative_rounds_to_unsigned_zero (test_converter.ValidationAndRoundingTests.test_small_negative_rounds_to_unsigned_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 65, in test_small_negative_rounds_to_unsigned_zero
+    self.assertEqual(str(self.converter.convert('-0.001', 'm', 'm', 2)), '0.00')
+AssertionError: '-0.00' != '0.00'
+- -0.00
+? -
++ 0.00
+
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.002s
+
+FAILED (failures=12, errors=8)
+
+EXIT_CODE=1

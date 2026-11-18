@@ -1,0 +1,4 @@
+behave==1.2.6
+parse==1.22.4
+parse-type==0.6.6
+six==1.17.0

@@ -1,0 +1,46 @@
+Проверка целостности bundle:
+lab-6-history.bundle is okay
+The bundle contains these 2 refs:
+c44a55bfc647af9d0d3005429e55646d16875ec6 refs/heads/master
+c44a55bfc647af9d0d3005429e55646d16875ec6 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Клонирование bundle:
+Восстановленная история:
+d4ef326 Manus <dev-agent@manus.ai> BDD: зафиксировать исходную спецификацию и неопределённые шаги
+feea5f4 Manus <dev-agent@manus.ai> BDD: реализовать конвертацию СИ и США и определения шагов
+63774db Manus <dev-agent@manus.ai> BDD: расширить сценарии старорусскими мерами и ошибками
+526d91f Manus <dev-agent@manus.ai> BDD: поддержать старорусские меры и проверить границы
+c44a55b Manus <dev-agent@manus.ai> Документировать воспроизведение BDD и показать историю
+Сверка вершин исходного и восстановленного репозитория: OK
+--- Этап d4ef326: код 1 (ожидался 1) ---
+
+0 features passed, 1 failed, 0 skipped
+0 scenarios passed, 6 failed, 0 skipped
+0 steps passed, 0 failed, 0 skipped, 24 undefined
+Took 0m0.000s
+--- Этап feea5f4: код 0 (ожидался 0) ---
+features/length_conversion.feature  ......
+1 feature passed, 0 failed, 0 skipped
+6 scenarios passed, 0 failed, 0 skipped
+24 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m0.001s
+--- Этап 63774db: код 1 (ожидался 1) ---
+
+0 features passed, 1 failed, 0 skipped
+16 scenarios passed, 27 failed, 0 skipped
+124 steps passed, 16 failed, 14 skipped, 18 undefined
+Took 0m0.007s
+--- Этап 526d91f: код 0 (ожидался 0) ---
+features/length_conversion.feature  ...........................................
+1 feature passed, 0 failed, 0 skipped
+43 scenarios passed, 0 failed, 0 skipped
+172 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m0.007s
+--- Дополнительные тесты в восстановленном проекте ---
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.089s
+
+OK
+Проверка bundle и повторное воспроизведение этапов: OK

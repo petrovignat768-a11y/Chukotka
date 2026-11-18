@@ -1,0 +1,42 @@
+Python: Python 3.12.3
+
+$ python3 -B cli.py 1 mi km --places 3
+1.609 km
+EXIT_CODE=0
+
+$ python3 -B cli.py 1 sazhen ft --places 2
+7.00 ft
+EXIT_CODE=0
+
+$ python3 -B cli.py -2 ft in
+-24.00 in
+EXIT_CODE=0
+
+$ python3 -B cli.py --places 2 -- -1e2 cm m
+-1.00 m
+EXIT_CODE=0
+
+$ python3 -B cli.py --units
+mm	0.001
+cm	0.01
+m	1
+km	1000
+in	0.0254
+ft	0.3048
+yd	0.9144
+mi	1609.344
+vershok	0.04445
+arshin	0.7112
+sazhen	2.1336
+verst	1066.8
+EXIT_CODE=0
+
+$ python3 -B cli.py NaN m cm
+usage: cli.py [-h] [--places PLACES] [--units] [value] [source] [target]
+cli.py: error: Число должно быть десятичной строкой длиной до 64 символов
+EXIT_CODE=2
+
+$ python3 -B cli.py 1 m bad
+usage: cli.py [-h] [--places PLACES] [--units] [value] [source] [target]
+cli.py: error: Неизвестная целевая единица
+EXIT_CODE=2

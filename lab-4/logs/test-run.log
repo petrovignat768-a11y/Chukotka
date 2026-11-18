@@ -1,0 +1,224 @@
+=== ENVIRONMENT ===
+UTC 2026-11-18T08:54:57Z
+cmake version 3.28.3
+c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+=== CONFIGURE: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug ===
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ubuntu/labs_2_8/lab-4/build
+=== BUILD: cmake --build build --config Debug --parallel 2 ===
+[ 25%] Building CXX object CMakeFiles/task_tracker.dir/src/task_tracker.cpp.o
+[ 50%] Linking CXX static library libtask_tracker.a
+[ 50%] Built target task_tracker
+[ 75%] Building CXX object CMakeFiles/task_tracker_tests.dir/tests/task_tracker_test.cpp.o
+[100%] Linking CXX executable task_tracker_tests
+[100%] Built target task_tracker_tests
+=== CTEST: ctest --test-dir build -C Debug --output-on-failure ===
+Internal ctest changing into directory: /home/ubuntu/labs_2_8/lab-4/build
+Test project /home/ubuntu/labs_2_8/lab-4/build
+      Start  1: TaskTrackerBasics.StartsEmpty
+ 1/42 Test  #1: TaskTrackerBasics.StartsEmpty ............................................................................................   Passed    0.00 sec
+      Start  2: TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks
+ 2/42 Test  #2: TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks ...........................................................   Passed    0.00 sec
+      Start  3: TaskTrackerBasics.ResultMessagesMatchSpecification
+ 3/42 Test  #3: TaskTrackerBasics.ResultMessagesMatchSpecification .......................................................................   Passed    0.00 sec
+      Start  4: TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies
+ 4/42 Test  #4: TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies ...............................................................   Passed    0.00 sec
+      Start  5: TaskTrackerBasics.PreservesEmbeddedNulBytes
+ 5/42 Test  #5: TaskTrackerBasics.PreservesEmbeddedNulBytes ..............................................................................   Passed    0.00 sec
+      Start  6: TaskTrackerBasics.DuplicateTitlesAreIndependentTasks
+ 6/42 Test  #6: TaskTrackerBasics.DuplicateTitlesAreIndependentTasks .....................................................................   Passed    0.00 sec
+      Start  7: PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering
+ 7/42 Test  #7: PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering .........................................................   Passed    0.00 sec
+      Start  8: PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask
+ 8/42 Test  #8: PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask ................................................................   Passed    0.00 sec
+      Start  9: PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField
+ 9/42 Test  #9: PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField .........................................................   Passed    0.00 sec
+      Start 10: PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState
+10/42 Test #10: PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState ..........................................................   Passed    0.00 sec
+      Start 11: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty  # GetParam() = Empty
+11/42 Test #11: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty  # GetParam() = Empty .............................   Passed    0.00 sec
+      Start 12: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace  # GetParam() = OneSpace
+12/42 Test #12: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace  # GetParam() = OneSpace .......................   Passed    0.00 sec
+      Start 13: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces  # GetParam() = ManySpaces
+13/42 Test #13: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces  # GetParam() = ManySpaces ...................   Passed    0.00 sec
+      Start 14: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab  # GetParam() = Tab
+14/42 Test #14: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab  # GetParam() = Tab .................................   Passed    0.00 sec
+      Start 15: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline  # GetParam() = Newline
+15/42 Test #15: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline  # GetParam() = Newline .........................   Passed    0.00 sec
+      Start 16: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn  # GetParam() = CarriageReturn
+16/42 Test #16: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn  # GetParam() = CarriageReturn ...........   Passed    0.00 sec
+      Start 17: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab  # GetParam() = VerticalTab
+17/42 Test #17: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab  # GetParam() = VerticalTab .................   Passed    0.00 sec
+      Start 18: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed  # GetParam() = FormFeed
+18/42 Test #18: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed  # GetParam() = FormFeed .......................   Passed    0.00 sec
+      Start 19: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace  # GetParam() = MixedWhitespace
+19/42 Test #19: InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace  # GetParam() = MixedWhitespace .........   Passed    0.00 sec
+      Start 20: ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter  # GetParam() = OneCharacter
+20/42 Test #20: ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter  # GetParam() = OneCharacter .........................   Passed    0.00 sec
+      Start 21: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple  # GetParam() = Simple
+21/42 Test #21: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple  # GetParam() = Simple .....................................   Passed    0.00 sec
+      Start 22: ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround  # GetParam() = WhitespaceAround
+22/42 Test #22: ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround  # GetParam() = WhitespaceAround .................   Passed    0.00 sec
+      Start 23: ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround  # GetParam() = MixedWhitespaceAround
+23/42 Test #23: ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround  # GetParam() = MixedWhitespaceAround .......   Passed    0.00 sec
+      Start 24: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic  # GetParam() = Cyrillic
+24/42 Test #24: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic  # GetParam() = Cyrillic .................................   Passed    0.00 sec
+      Start 25: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji  # GetParam() = Emoji
+25/42 Test #25: ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji  # GetParam() = Emoji .......................................   Passed    0.00 sec
+      Start 26: ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace  # GetParam() = UnicodeNonBreakingSpace
+26/42 Test #26: ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace  # GetParam() = UnicodeNonBreakingSpace ...   Passed    0.00 sec
+      Start 27: BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First  # GetParam() = First
+27/42 Test #27: BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First  # GetParam() = First ..............   Passed    0.00 sec
+      Start 28: BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last  # GetParam() = Last
+28/42 Test #28: BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last  # GetParam() = Last ................   Passed    0.00 sec
+      Start 29: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First  # GetParam() = First
+29/42 Test #29: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First  # GetParam() = First ...........................   Passed    0.00 sec
+      Start 30: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted  # GetParam() = MiddleCompleted
+30/42 Test #30: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted  # GetParam() = MiddleCompleted .......   Passed    0.00 sec
+      Start 31: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last  # GetParam() = Last
+31/42 Test #31: Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last  # GetParam() = Last .............................   Passed    0.00 sec
+      Start 32: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection  # GetParam() = NoSelection
+32/42 Test #32: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection  # GetParam() = NoSelection .........   Passed    0.00 sec
+      Start 33: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize  # GetParam() = AtSize
+33/42 Test #33: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize  # GetParam() = AtSize ...................   Passed    0.00 sec
+      Start 34: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize  # GetParam() = BeyondSize
+34/42 Test #34: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize  # GetParam() = BeyondSize ...........   Passed    0.00 sec
+      Start 35: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex  # GetParam() = MaximumIndex
+35/42 Test #35: InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex  # GetParam() = MaximumIndex .......   Passed    0.00 sec
+      Start 36: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection  # GetParam() = NoSelection
+36/42 Test #36: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection  # GetParam() = NoSelection ...........   Passed    0.00 sec
+      Start 37: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize  # GetParam() = AtSize
+37/42 Test #37: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize  # GetParam() = AtSize .....................   Passed    0.00 sec
+      Start 38: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize  # GetParam() = BeyondSize
+38/42 Test #38: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize  # GetParam() = BeyondSize .............   Passed    0.00 sec
+      Start 39: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex  # GetParam() = MaximumIndex
+39/42 Test #39: InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex  # GetParam() = MaximumIndex .........   Passed    0.00 sec
+      Start 40: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection  # GetParam() = NoSelection
+40/42 Test #40: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection  # GetParam() = NoSelection .......   Passed    0.00 sec
+      Start 41: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero  # GetParam() = Zero
+41/42 Test #41: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero  # GetParam() = Zero .....................   Passed    0.00 sec
+      Start 42: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex  # GetParam() = MaximumIndex
+42/42 Test #42: EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex  # GetParam() = MaximumIndex .....   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 42
+
+Total Test time (real) =   0.11 sec
+=== GOOGLE TEST DIRECT: ./build/task_tracker_tests --gtest_color=no ===
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 42 tests from 9 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from TaskTrackerBasics
+[ RUN      ] TaskTrackerBasics.StartsEmpty
+[       OK ] TaskTrackerBasics.StartsEmpty (0 ms)
+[ RUN      ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks
+[       OK ] TaskTrackerBasics.SetInputReplacesTheFieldWithoutChangingTasks (0 ms)
+[ RUN      ] TaskTrackerBasics.ResultMessagesMatchSpecification
+[       OK ] TaskTrackerBasics.ResultMessagesMatchSpecification (0 ms)
+[ RUN      ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies
+[       OK ] TaskTrackerBasics.ReturnedDisplayLinesAreIndependentCopies (0 ms)
+[ RUN      ] TaskTrackerBasics.PreservesEmbeddedNulBytes
+[       OK ] TaskTrackerBasics.PreservesEmbeddedNulBytes (0 ms)
+[ RUN      ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks
+[       OK ] TaskTrackerBasics.DuplicateTitlesAreIndependentTasks (0 ms)
+[----------] 6 tests from TaskTrackerBasics (0 ms total)
+
+[----------] 4 tests from PopulatedTrackerTest
+[ RUN      ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering
+[       OK ] PopulatedTrackerTest.FixtureHasExpectedOrderStatusesAndRendering (0 ms)
+[ RUN      ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask
+[       OK ] PopulatedTrackerTest.AddAppendsAndPreservesEveryPriorTask (0 ms)
+[ RUN      ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField
+[       OK ] PopulatedTrackerTest.RepeatedCompletionDoesNotChangeStateOrField (0 ms)
+[ RUN      ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState
+[       OK ] PopulatedTrackerTest.RemovingAllTasksEventuallyLeavesEmptyState (0 ms)
+[----------] 4 tests from PopulatedTrackerTest (0 ms total)
+
+[----------] 9 tests from InvalidValues/InvalidInputTest
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Empty (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/OneSpace (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/ManySpaces (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Tab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/Newline (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/CarriageReturn (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/VerticalTab (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/FormFeed (0 ms)
+[ RUN      ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace
+[       OK ] InvalidValues/InvalidInputTest.RejectsWithoutChangingListOrInput/MixedWhitespace (0 ms)
+[----------] 9 tests from InvalidValues/InvalidInputTest (0 ms total)
+
+[----------] 7 tests from ValidValues/ValidInputTest
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/OneCharacter (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Simple (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/WhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/MixedWhitespaceAround (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Cyrillic (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/Emoji (0 ms)
+[ RUN      ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace
+[       OK ] ValidValues/ValidInputTest.AddsExactTextAndClearsField/UnicodeNonBreakingSpace (0 ms)
+[----------] 7 tests from ValidValues/ValidInputTest (0 ms total)
+
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/First (0 ms)
+[ RUN      ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last
+[       OK ] BoundaryTasks/CompleteValidIndexTest.ChangesOnlySelectedStatusAndPreservesOrder/Last (0 ms)
+[----------] 2 tests from BoundaryTasks/CompleteValidIndexTest (0 ms total)
+
+[----------] 3 tests from Positions/DeleteValidIndexTest
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/First (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/MiddleCompleted (0 ms)
+[ RUN      ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last
+[       OK ] Positions/DeleteValidIndexTest.DeletesExactlyOneAndPreservesOthers/Last (0 ms)
+[----------] 3 tests from Positions/DeleteValidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/CompleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/CompleteInvalidIndexTest (0 ms total)
+
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/NoSelection (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/AtSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/BeyondSize (0 ms)
+[ RUN      ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex
+[       OK ] InvalidSelection/DeleteInvalidIndexTest.RejectsWithoutChangingAnyState/MaximumIndex (0 ms)
+[----------] 4 tests from InvalidSelection/DeleteInvalidIndexTest (0 ms total)
+
+[----------] 3 tests from EmptyList/EmptyListSelectionTest
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/NoSelection (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/Zero (0 ms)
+[ RUN      ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex
+[       OK ] EmptyList/EmptyListSelectionTest.BothOperationsRejectAndPreserveEmptyState/MaximumIndex (0 ms)
+[----------] 3 tests from EmptyList/EmptyListSelectionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 9 test suites ran. (0 ms total)
+[  PASSED  ] 42 tests.

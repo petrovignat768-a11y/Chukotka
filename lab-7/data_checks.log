@@ -1,0 +1,12 @@
+test_csv_special_characters_round_trip (__main__.DataTests.test_csv_special_characters_round_trip) ... ok
+test_duplicate_is_present (__main__.DataTests.test_duplicate_is_present) ... ok
+test_headers (__main__.DataTests.test_headers) ... ok
+test_mass_count_and_order (__main__.DataTests.test_mass_count_and_order) ... ok
+test_negative_whitespace_and_warning (__main__.DataTests.test_negative_whitespace_and_warning) ... ok
+test_positive_count_and_ids (__main__.DataTests.test_positive_count_and_ids) ... ok
+test_positive_nonempty_and_expected (__main__.DataTests.test_positive_nonempty_and_expected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

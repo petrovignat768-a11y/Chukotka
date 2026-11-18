@@ -1,0 +1,44 @@
+Feature: Преобразование длины между единицами СИ и США # features/length_conversion.feature:1
+  Чтобы сравнивать значения длины, пользователь переводит величину
+  из одной поддерживаемой единицы в другую.
+  Scenario Outline: Корректное преобразование длины -- @1.1 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:13
+    Given исходное значение "1"                                                                    # features/steps/length_steps.py:10
+    And единицы измерения "m" и "cm"                                                               # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "100" с точностью "0.000000000001"                                        # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.2 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:14
+    Given исходное значение "250"                                                                  # features/steps/length_steps.py:10
+    And единицы измерения "cm" и "m"                                                               # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "2.5" с точностью "0.000000000001"                                        # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.3 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:15
+    Given исходное значение "1"                                                                    # features/steps/length_steps.py:10
+    And единицы измерения "in" и "mm"                                                              # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "25.4" с точностью "0.000000000001"                                       # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.4 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:16
+    Given исходное значение "12"                                                                   # features/steps/length_steps.py:10
+    And единицы измерения "in" и "ft"                                                              # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "1" с точностью "0.000000000001"                                          # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.5 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:17
+    Given исходное значение "1"                                                                    # features/steps/length_steps.py:10
+    And единицы измерения "ft" и "m"                                                               # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "0.3048" с точностью "0.000000000001"                                     # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.6 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:18
+    Given исходное значение "1"                                                                    # features/steps/length_steps.py:10
+    And единицы измерения "mi" и "km"                                                              # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                   # features/steps/length_steps.py:22
+    Then результат равен "1.609344" с точностью "0.000000000001"                                   # features/steps/length_steps.py:27
+
+1 feature passed, 0 failed, 0 skipped
+6 scenarios passed, 0 failed, 0 skipped
+24 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m0.001s
+Фактический код выхода: 0

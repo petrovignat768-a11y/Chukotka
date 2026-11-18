@@ -1,0 +1,10 @@
+Созданы данные: положительных=12, отрицательных=3, массовых=100
+Это не запуск тестируемого приложения и не результаты RFT.
+Functional scenarios: 20 unique: 20
+Python syntax OK: tools/make_data.py
+Python syntax OK: tools/test_data.py
+Python syntax OK: tools/probe_exe.py
+Missing local report links: []
+Data regeneration byte-for-byte deterministic: True
+Source EXE SHA256: e26ad6b44c6fa10fe0341f3417a458784f4481e5a7adc9a95e8d6b470ee974ac
+PASS: material checks only; no application or RFT test performed.

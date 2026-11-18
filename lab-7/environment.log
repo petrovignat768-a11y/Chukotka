@@ -1,0 +1,38 @@
+=== environment ===
+Linux 15359ddd77fb 6.18.38+ #1 SMP PREEMPT_DYNAMIC Thu Oct  1 05:04:21 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+=== source files ===
+total 12M
+drwxr-xr-x 2 ubuntu ubuntu 4.0K Nov 18 08:41 .
+drwxr-xr-x 4 ubuntu ubuntu 4.0K Nov 18 08:41 ..
+-rw-r--r-- 1 ubuntu ubuntu 4.1K Nov 18 08:41 Specification.md
+-rw-r--r-- 1 ubuntu ubuntu  798 Nov 18 08:41 readme.md
+-rw-r--r-- 1 ubuntu ubuntu  11M Nov 18 08:41 todo_app.exe
+-rw-r--r-- 1 ubuntu ubuntu 1.2M Nov 18 08:41 use_case.png
+
+=== tools in PATH ===
+wine: NOT FOUND
+wine64: NOT FOUND
+wineserver: NOT FOUND
+java: /usr/bin/java
+javac: /usr/bin/javac
+functionaltester: NOT FOUND
+rft: NOT FOUND
+
+=== executable type and hashes ===
+/home/ubuntu/chukotka-source/Petrov/todo_app.exe: PE32+ executable (GUI) x86-64, for MS Windows, 7 sections
+e26ad6b44c6fa10fe0341f3417a458784f4481e5a7adc9a95e8d6b470ee974ac  /home/ubuntu/chukotka-source/Petrov/todo_app.exe
+55220f8965a6dad64e1fc311d7f8991ad8eb9663d47ad298e115f97814ca488f  /home/ubuntu/chukotka-source/Petrov/Specification.md
+5ee7dc72cb8e3f5a8930b0f1811c282383668d6289419a4753297d99a4b14123  /home/ubuntu/chukotka-source/Petrov/readme.md
+
+=== IBM/RFT standard locations ===
+/opt/IBM: NOT FOUND
+/opt/ibm: NOT FOUND
+/usr/local/IBM: NOT FOUND
+/home/ubuntu/IBM: NOT FOUND
+
+=== DISPLAY ===
+DISPLAY=:0
+
+=== PowerShell ===
+pwsh: NOT FOUND

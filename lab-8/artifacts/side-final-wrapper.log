@@ -1,0 +1,69 @@
+# Terminal Full Output
+# Terminal: sub-ab40f6fff835_a6-lab8-final-side
+# Command: set -o pipefail; export TMPDIR="$PWD/.runtime" XDG_CACHE_HOME="$PWD/.runtime/cache" NO_PROXY='localhost,127.0.0.1,::1' no_proxy='localhost,127.0.0.1,::1'; rm -f data/ide-run.sqlite3; .venv/bin/python app.py --db "$PWD/data/ide-run.sqlite3" > artifacts/side-server.log 2>&1 & server=$!; ready=0; for n in $(seq 1 40); do if ! kill -0 "$server" 2>/dev/null; then echo 'Server startup failed'; cat artifacts/side-server.log; exit 1; fi; if curl -fsS http://127.0.0.1:8765/ >/dev/null 2>&1; then ready=1; break; fi; sleep 0.25; done; if [ "$ready" -ne 1 ]; then kill "$server" 2>/dev/null; echo 'Server did not become ready'; exit 1; fi; { printf 'Selenium IDE runner version: '; ./node_modules/.bin/selenium-side-runner --version; printf '\nChromium: '; chromium --version; printf '\nChromeDriver: '; chromedriver --version; echo; timeout 120 ./node_modules/.bin/selenium-side-runner --max-workers 1 --steps -c 'browserName=chrome goog:chromeOptions.args=[--headless=new,--no-sandbox,--disable-dev-shm-usage]' tracker.side; result=$?; echo "RUNNER_EXIT_CODE=$result"; .venv/bin/python -c 'import sqlite3; db=sqlite3.connect("data/ide-run.sqlite3"); print("SQL rows after IDE suite:", db.execute("select id,title,completed from tasks order by id").fetchall())'; exit "$result"; } 2>&1 | tee artifacts/side-runner.log; result=${PIPESTATUS[0]}; kill "$server" 2>/dev/null || true; wait "$server" 2>/dev/null || true; exit "$result"
+# PID: 1151
+# Timestamp: 2026-11-18_09-18-04.482020
+# Original Length: 7703 characters
+# ----------------------------------------
+
+[32mubuntu@sandbox:~$ [0mset -o pipefail; export TMPDIR="$PWD/.runtime" XDG_CACHE_HOME="$PWD/.runtime/cache" NO_PROXY='localhost,127.0.0.1,::1' no_proxy='localhost,127.0.0.1,::1'; rm -f data/ide-run.sqlite3; .venv/bin/python app.py --db "$PWD/data/ide-run.sqlite3" > artifacts/side-server.log 2>&1 & server=$!; ready=0; for n in $(seq 1 40); do if ! kill -0 "$server" 2>/dev/null; then echo 'Server startup failed'; cat artifacts/side-server.log; exit 1; fi; if curl -fsS http://127.0.0.1:8765/ >/dev/null 2>&1; then ready=1; break; fi; sleep 0.25; done; if [ "$ready" -ne 1 ]; then kill "$server" 2>/dev/null; echo 'Server did not become ready'; exit 1; fi; { printf 'Selenium IDE runner version: '; ./node_modules/.bin/selenium-side-runner --version; printf '\nChromium: '; chromium --version; printf '\nChromeDriver: '; chromedriver --version; echo; timeout 120 ./node_modules/.bin/selenium-side-runner --max-workers 1 --steps -c 'browserName=chrome goog:chromeOptions.args=[--headless=new,--no-sandbox,--disable-dev-shm-usage]' tracker.side; result=$?; echo "RUNNER_EXIT_CODE=$result"; .venv/bin/python -c 'import sqlite3; db=sqlite3.connect("data/ide-run.sqlite3"); print("SQL rows after IDE suite:", db.execute("select id,title,completed from tasks order by id").fetchall())'; exit "$result"; } 2>&1 | tee artifacts/side-runner.log; result=${PIPESTATUS[0]}; kill "$server" 2>/dev/null || true; wait "$server" 2>/dev/null || true; exit "$result"
+[1] 15151
+Selenium IDE runner version: 4.1.0-beta.3
+Chromium: Chromium 156.0.8078.73 built on Ubuntu 24.04.5 LTS
+ChromeDriver: ChromeDriver 156.0.8078.73 (2f9a11097447f226133bc1a31c787291a5eeab98-refs/branch-heads/8078@{#1612})
+[32minfo[39m: Running test Создание и удаление
+[32minfo[39m: ✓ Создание и удаление › open | /
+[32minfo[39m: ✓ Создание и удаление › assertTitle | Командный трекер задач — демо
+[32minfo[39m: ✓ Создание и удаление › type | id=task-input | IDE создание и удаление
+[32minfo[39m: ✓ Создание и удаление › click | id=add
+[32minfo[39m: ✓ Создание и удаление › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']] | 5000
+[32minfo[39m: ✓ Создание и удаление › assertValue | id=task-input
+[32minfo[39m: ✓ Создание и удаление › assertText | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//span[@class='task-status'] | [ ]
+[32minfo[39m: ✓ Создание и удаление › click | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//input
+[32minfo[39m: ✓ Создание и удаление › click | id=delete
+[32minfo[39m: ✓ Создание и удаление › waitForElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']] | 5000
+[32minfo[39m: ✓ Создание и удаление › assertElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]
+[32minfo[39m: Finished test Создание и удаление Success
+[32minfo[39m: Running test Завершение, повтор, очистка
+[32minfo[39m: ✓ Завершение, повтор, очистка › open | /
+[32minfo[39m: ✓ Завершение, повтор, очистка › type | id=task-input | IDE выполнение задачи
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=add
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=complete
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status' and text()='[✓]'] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertText | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status'] | [✓]
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=complete
+[32minfo[39m: ✓ Завершение, повтор, очистка › pause | 500
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertAlert | Эта задача уже выполнена
+[32minfo[39m: ✓ Завершение, повтор, очистка › acceptAlert
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=delete
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]
+[32minfo[39m: Finished test Завершение, повтор, очистка Success
+[32minfo[39m: Running test Предупреждение при пустом вводе
+[32minfo[39m: ✓ Предупреждение при пустом вводе › open | /
+[32minfo[39m: ✓ Предупреждение при пустом вводе › type | id=task-input
+[32minfo[39m: ✓ Предупреждение при пустом вводе › click | id=add
+[32minfo[39m: ✓ Предупреждение при пустом вводе › pause | 500
+[32minfo[39m: ✓ Предупреждение при пустом вводе › assertAlert | Текст задачи не может быть пустым!
+[32minfo[39m: ✓ Предупреждение при пустом вводе › acceptAlert
+[32minfo[39m: ✓ Предупреждение при пустом вводе › assertElementPresent | id=task-input
+[32minfo[39m: Finished test Предупреждение при пустом вводе Success
+PASS node_modules/selenium-side-runner/dist/main.test.js
+  Running project Трекер задач — лабораторная 8
+    Running suite Основной набор
+      ✓ Running test Создание и удаление (1071 ms)
+      ✓ Running test Завершение, повтор, очистка (1767 ms)
+      ✓ Running test Предупреждение при пустом вводе (1165 ms)
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        4.337 s, estimated 5 s
+Ran all test suites within paths "/home/ubuntu/labs_2_8/lab-8/node_modules/selenium-side-runner/dist/main.test.js".
+RUNNER_EXIT_CODE=0
+SQL rows after IDE suite: []
+exit
+bash: exit: : numeric argument required

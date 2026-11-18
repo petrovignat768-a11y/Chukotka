@@ -1,0 +1,198 @@
+        -:    0:Source:/home/ubuntu/labs_2_8/lab-4/src/task_tracker.cpp
+        -:    0:Graph:../../build-coverage/CMakeFiles/task_tracker.dir/src/task_tracker.cpp.gcno
+        -:    0:Data:../../build-coverage/CMakeFiles/task_tracker.dir/src/task_tracker.cpp.gcda
+        -:    0:Runs:2
+        -:    1:#include "tracker/task_tracker.h"
+        -:    2:
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:namespace tracker {
+        -:    6:namespace {
+        -:    7:
+function _ZN7tracker12_GLOBAL__N_119is_ascii_whitespaceEc called 95 returned 100% blocks executed 100%
+       95:    8:bool is_ascii_whitespace(char c) noexcept {
+       95:    9:    switch (c) {
+branch  0 taken 22
+branch  1 taken 73
+       22:   10:        case ' ': case '\t': case '\n': case '\r': case '\v': case '\f':
+       22:   11:            return true;
+       73:   12:        default:
+       73:   13:            return false;
+        -:   14:    }
+        -:   15:}
+        -:   16:
+        -:   17:}  // namespace
+        -:   18:
+function _ZN7tracker7messageENS_6ResultE called 5 returned 100% blocks executed 85%
+        5:   19:std::string_view message(Result result) noexcept {
+        5:   20:    switch (result) {
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 1
+branch  4 taken 1
+branch  5 taken 0
+        1:   21:        case Result::Ok: return "";
+call    0 returned 1
+        1:   22:        case Result::EmptyText: return "Текст задачи не может быть пустым!";
+call    0 returned 1
+        1:   23:        case Result::NoSelectionForComplete: return "Выберите задачу из списка!";
+call    0 returned 1
+        1:   24:        case Result::AlreadyCompleted: return "Эта задача уже выполнена";
+call    0 returned 1
+        1:   25:        case Result::NoSelectionForDelete: return "Выберите задачу для удаления!";
+call    0 returned 1
+        -:   26:    }
+    #####:   27:    return "";  // Defensive fallback; not part of the public Result contract.
+call    0 never executed
+        -:   28:}
+        -:   29:
+function _ZN7tracker11TaskTracker9set_inputENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 104 returned 100% blocks executed 100%
+      104:   30:void TaskTracker::set_input(std::string text) {
+      104:   31:    input_ = std::move(text);
+call    0 returned 104
+call    1 returned 104
+      104:   32:}
+        -:   33:
+function _ZNK7tracker11TaskTracker5inputB5cxx11Ev called 38 returned 100% blocks executed 100%
+       38:   34:const std::string& TaskTracker::input() const noexcept {
+       38:   35:    return input_;
+        -:   36:}
+        -:   37:
+function _ZN7tracker11TaskTracker14add_from_inputEv called 82 returned 100% blocks executed 78%
+       82:   38:Result TaskTracker::add_from_input() {
+       82:   39:    bool has_content = false;
+      104:   40:    for (char c : input_) {
+call    0 returned 82
+call    1 returned 82
+call    2 returned 95
+call    3 returned 22
+call    4 returned 104
+branch  5 taken 95
+branch  6 taken 9 (fallthrough)
+       95:   41:        if (!is_ascii_whitespace(c)) {
+call    0 returned 95
+branch  1 taken 73 (fallthrough)
+branch  2 taken 22
+       73:   42:            has_content = true;
+       73:   43:            break;
+        -:   44:        }
+        -:   45:    }
+       82:   46:    if (!has_content) {
+branch  0 taken 9 (fallthrough)
+branch  1 taken 73
+        9:   47:        return Result::EmptyText;
+        -:   48:    }
+       73:   49:    tasks_.push_back(Task{input_, false});
+call    0 returned 73
+branch  1 taken 73 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 73
+branch  4 taken 73 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 73
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed
+call   10 never executed
+       73:   50:    input_.clear();
+call    0 returned 73
+       73:   51:    return Result::Ok;
+        -:   52:}
+        -:   53:
+function _ZNK7tracker11TaskTracker11valid_indexESt8optionalImE called 52 returned 100% blocks executed 100%
+       52:   54:bool TaskTracker::valid_index(std::optional<std::size_t> index) const noexcept {
+       52:   55:    return index.has_value() && *index < tasks_.size();
+call    0 returned 52
+branch  1 taken 48 (fallthrough)
+branch  2 taken 4
+call    3 returned 48
+call    4 returned 48
+branch  5 taken 37 (fallthrough)
+branch  6 taken 11
+        -:   56:}
+        -:   57:
+function _ZN7tracker11TaskTracker8completeESt8optionalImE called 37 returned 100% blocks executed 100%
+       37:   58:Result TaskTracker::complete(std::optional<std::size_t> index) {
+       37:   59:    if (!valid_index(index)) {
+call    0 returned 37
+branch  1 taken 7 (fallthrough)
+branch  2 taken 30
+        7:   60:        return Result::NoSelectionForComplete;
+        -:   61:    }
+       30:   62:    if (tasks_[*index].done) {
+call    0 returned 30
+call    1 returned 30
+branch  2 taken 1 (fallthrough)
+branch  3 taken 29
+        1:   63:        return Result::AlreadyCompleted;
+        -:   64:    }
+       29:   65:    tasks_[*index].done = true;
+call    0 returned 29
+call    1 returned 29
+       29:   66:    return Result::Ok;
+        -:   67:}
+        -:   68:
+function _ZN7tracker11TaskTracker6removeESt8optionalImE called 15 returned 100% blocks executed 85%
+       15:   69:Result TaskTracker::remove(std::optional<std::size_t> index) {
+       15:   70:    if (!valid_index(index)) {
+call    0 returned 15
+branch  1 taken 8 (fallthrough)
+branch  2 taken 7
+        8:   71:        return Result::NoSelectionForDelete;
+        -:   72:    }
+        7:   73:    tasks_.erase(tasks_.begin() + static_cast<std::vector<Task>::difference_type>(*index));
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+call    3 returned 7
+call    4 returned 7
+branch  5 taken 7 (fallthrough)
+branch  6 taken 0 (throw)
+        7:   74:    return Result::Ok;
+        -:   75:}
+        -:   76:
+function _ZNK7tracker11TaskTracker5tasksEv called 82 returned 100% blocks executed 100%
+       82:   77:const std::vector<Task>& TaskTracker::tasks() const noexcept {
+       82:   78:    return tasks_;
+        -:   79:}
+        -:   80:
+function _ZNK7tracker11TaskTracker13display_linesB5cxx11Ev called 28 returned 100% blocks executed 68%
+       28:   81:std::vector<std::string> TaskTracker::display_lines() const {
+       28:   82:    std::vector<std::string> result;
+call    0 returned 28
+       28:   83:    result.reserve(tasks_.size());
+call    0 returned 28
+call    1 returned 28
+branch  2 taken 28 (fallthrough)
+branch  3 taken 0 (throw)
+       76:   84:    for (const auto& task : tasks_) {
+call    0 returned 28
+call    1 returned 28
+call    2 returned 48
+call    3 returned 76
+branch  4 taken 48
+branch  5 taken 28 (fallthrough)
+      144:   85:        result.push_back(std::string(task.done ? "[✓] " : "[ ] ") + task.text);
+branch  0 taken 16 (fallthrough)
+branch  1 taken 32
+call    2 returned 48
+branch  3 taken 48 (fallthrough)
+branch  4 taken 0 (throw)
+call    5 returned 48
+branch  6 taken 48 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 48
+branch  9 taken 48 (fallthrough)
+branch 10 taken 0 (throw)
+call   11 returned 48
+call   12 returned 48
+call   13 returned 48
+call   14 never executed
+call   15 never executed
+        -:   86:    }
+       28:   87:    return result;
+    =====:   88:}
+call    0 never executed
+        -:   89:
+        -:   90:}  // namespace tracker

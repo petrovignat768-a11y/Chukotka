@@ -1,0 +1,21 @@
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+PASS add-empty
+PASS add-tail
+PASS add-duplicate
+PASS mark-middle
+PASS delete-middle
+PASS unchanged
+PASS empty-input
+PASS warning
+PASS detect-no-added-record (ожидаемое обнаружение расхождения)
+PASS detect-wrong-text (ожидаемое обнаружение расхождения)
+PASS detect-changed-previous (ожидаемое обнаружение расхождения)
+PASS detect-wrong-marked-row (ожидаемое обнаружение расхождения)
+PASS detect-wrong-delete (ожидаемое обнаружение расхождения)
+PASS detect-unwanted-mutation (ожидаемое обнаружение расхождения)
+PASS detect-not-empty (ожидаемое обнаружение расхождения)
+PASS detect-wrong-warning (ожидаемое обнаружение расхождения)
+ИТОГО: 16 самопроверок оракула; EXE и RFT не тестировались.

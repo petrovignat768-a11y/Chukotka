@@ -1,0 +1,61 @@
+Selenium IDE runner version: 4.1.0-beta.3
+
+Chromium: Chromium 156.0.8078.73 built on Ubuntu 24.04.5 LTS
+
+ChromeDriver: ChromeDriver 156.0.8078.73 (2f9a11097447f226133bc1a31c787291a5eeab98-refs/branch-heads/8078@{#1612})
+
+[32minfo[39m: Running test Создание и удаление
+[32minfo[39m: ✓ Создание и удаление › open | /
+[32minfo[39m: ✓ Создание и удаление › assertTitle | Командный трекер задач — демо
+[32minfo[39m: ✓ Создание и удаление › type | id=task-input | IDE создание и удаление
+[32minfo[39m: ✓ Создание и удаление › click | id=add
+[32minfo[39m: ✓ Создание и удаление › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']] | 5000
+[32minfo[39m: ✓ Создание и удаление › assertValue | id=task-input
+[32minfo[39m: ✓ Создание и удаление › assertText | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//span[@class='task-status'] | [ ]
+[32minfo[39m: ✓ Создание и удаление › click | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//input
+[32minfo[39m: ✓ Создание и удаление › click | id=delete
+[32minfo[39m: ✓ Создание и удаление › waitForElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']] | 5000
+[32minfo[39m: ✓ Создание и удаление › assertElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]
+[32minfo[39m: Finished test Создание и удаление Success
+[32minfo[39m: Running test Завершение, повтор, очистка
+[32minfo[39m: ✓ Завершение, повтор, очистка › open | /
+[32minfo[39m: ✓ Завершение, повтор, очистка › type | id=task-input | IDE выполнение задачи
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=add
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=complete
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status' and text()='[✓]'] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertText | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status'] | [✓]
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=complete
+[32minfo[39m: ✓ Завершение, повтор, очистка › pause | 500
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertAlert | Эта задача уже выполнена
+[32minfo[39m: ✓ Завершение, повтор, очистка › acceptAlert
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input
+[32minfo[39m: ✓ Завершение, повтор, очистка › click | id=delete
+[32minfo[39m: ✓ Завершение, повтор, очистка › waitForElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']] | 5000
+[32minfo[39m: ✓ Завершение, повтор, очистка › assertElementNotPresent | xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]
+[32minfo[39m: Finished test Завершение, повтор, очистка Success
+[32minfo[39m: Running test Предупреждение при пустом вводе
+[32minfo[39m: ✓ Предупреждение при пустом вводе › open | /
+[32minfo[39m: ✓ Предупреждение при пустом вводе › type | id=task-input
+[32minfo[39m: ✓ Предупреждение при пустом вводе › click | id=add
+[32minfo[39m: ✓ Предупреждение при пустом вводе › pause | 500
+[32minfo[39m: ✓ Предупреждение при пустом вводе › assertAlert | Текст задачи не может быть пустым!
+[32minfo[39m: ✓ Предупреждение при пустом вводе › acceptAlert
+[32minfo[39m: ✓ Предупреждение при пустом вводе › assertElementPresent | id=task-input
+[32minfo[39m: Finished test Предупреждение при пустом вводе Success
+PASS node_modules/selenium-side-runner/dist/main.test.js
+  Running project Трекер задач — лабораторная 8
+    Running suite Основной набор
+      ✓ Running test Создание и удаление (1071 ms)
+      ✓ Running test Завершение, повтор, очистка (1767 ms)
+      ✓ Running test Предупреждение при пустом вводе (1165 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        4.337 s, estimated 5 s
+Ran all test suites within paths "/home/ubuntu/labs_2_8/lab-8/node_modules/selenium-side-runner/dist/main.test.js".
+RUNNER_EXIT_CODE=0
+SQL rows after IDE suite: []

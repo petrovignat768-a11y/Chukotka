@@ -1,0 +1,15 @@
+Collecting behave==1.2.6
+  Downloading behave-1.2.6-py2.py3-none-any.whl.metadata (6.4 kB)
+Collecting parse>=1.8.2 (from behave==1.2.6)
+  Downloading parse-1.22.4-py2.py3-none-any.whl.metadata (22 kB)
+Collecting parse-type>=0.4.2 (from behave==1.2.6)
+  Downloading parse_type-0.6.6-py2.py3-none-any.whl.metadata (12 kB)
+Collecting six>=1.11 (from behave==1.2.6)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading behave-1.2.6-py2.py3-none-any.whl (136 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.8/136.8 kB 11.9 MB/s eta 0:00:00
+Downloading parse-1.22.4-py2.py3-none-any.whl (21 kB)
+Downloading parse_type-0.6.6-py2.py3-none-any.whl (27 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: parse, six, parse-type, behave
+Successfully installed behave-1.2.6 parse-1.22.4 parse-type-0.6.6 six-1.17.0

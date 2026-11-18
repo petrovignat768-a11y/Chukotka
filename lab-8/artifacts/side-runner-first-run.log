@@ -1,0 +1,24 @@
+Selenium IDE runner version: 4.1.0-beta.3
+
+Chromium: Chromium 156.0.8078.73 built on Ubuntu 24.04.5 LTS
+
+ChromeDriver: ChromeDriver 156.0.8078.73 (2f9a11097447f226133bc1a31c787291a5eeab98-refs/branch-heads/8078@{#1612})
+
+Error: Could not find a config file based on provided values:
+path: "/home/ubuntu/labs_2_8/lab-8"
+cwd: "/home/ubuntu/labs_2_8/lab-8"
+Config paths must be specified by either a direct path to a config
+file, or a path to a directory. If directory is given, Jest will try to
+traverse directory tree up, until it finds one of those files in exact order: "jest.config.js" or "jest.config.ts" or "jest.config.mjs" or "jest.config.mts" or "jest.config.cjs" or "jest.config.cts" or "jest.config.json".
+    at resolveConfigPathByTraversing (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2596:11)
+    at resolveConfigPathByTraversing (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2600:10)
+    at resolveConfigPathByTraversing (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2600:10)
+    at resolveConfigPathByTraversing (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2600:10)
+    at resolveConfigPathByTraversing (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2600:10)
+    at resolveConfigPath (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:2567:10)
+    at /home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:1246:163
+    at Array.map (<anonymous>)
+    at readConfigs (/home/ubuntu/labs_2_8/lab-8/node_modules/jest-config/build/index.js:1240:8)
+    at async runCLI (/home/ubuntu/labs_2_8/lab-8/node_modules/@jest/core/build/index.js:1420:7)
+RUNNER_EXIT_CODE=1
+SQL rows after IDE suite: []

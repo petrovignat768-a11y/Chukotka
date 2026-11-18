@@ -1,0 +1,19 @@
+test_invalid_input (test_converter.CliTests.test_invalid_input) ... ok
+test_list (test_converter.CliTests.test_list) ... ok
+test_list_cannot_be_combined_with_conversion (test_converter.CliTests.test_list_cannot_be_combined_with_conversion) ... ok
+test_missing_arguments (test_converter.CliTests.test_missing_arguments) ... ok
+test_success (test_converter.CliTests.test_success) ... ok
+test_all_144_unit_pairs_round_trip (test_converter.ConverterTests.test_all_144_unit_pairs_round_trip) ... ok
+test_errors_have_stable_codes (test_converter.ConverterTests.test_errors_have_stable_codes) ... ok
+test_input_and_unit_whitespace_and_case (test_converter.ConverterTests.test_input_and_unit_whitespace_and_case) ... ok
+test_internal_precision_does_not_depend_on_caller_precision (test_converter.ConverterTests.test_internal_precision_does_not_depend_on_caller_precision) ... ok
+test_non_string_and_too_long_input_rejected (test_converter.ConverterTests.test_non_string_and_too_long_input_rejected) ... ok
+test_reference_conversions (test_converter.ConverterTests.test_reference_conversions) ... ok
+test_unit_mapping_cannot_be_mutated (test_converter.ConverterTests.test_unit_mapping_cannot_be_mutated) ... ok
+test_zero_and_bounds (test_converter.ConverterTests.test_zero_and_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.097s
+
+OK
+Фактический код выхода: 0

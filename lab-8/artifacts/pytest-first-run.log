@@ -1,0 +1,726 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.7.0 -- /home/ubuntu/labs_2_8/lab-8/.venv/bin/python
+rootdir: /home/ubuntu/labs_2_8/lab-8
+collecting ... collected 16 items
+
+test_web.py::test_initial_interface_and_storage PASSED                   [  6%]
+test_web.py::test_add_from_data_pool[cyrillic] PASSED                    [ 12%]
+test_web.py::test_add_from_data_pool[punctuation] PASSED                 [ 18%]
+test_web.py::test_add_from_data_pool[digits] FAILED                      [ 25%]
+test_web.py::test_add_from_data_pool[markup] PASSED                      [ 31%]
+test_web.py::test_add_from_data_pool[same_title] PASSED                  [ 37%]
+test_web.py::test_reject_blank_and_preserve_existing[empty] FAILED       [ 43%]
+test_web.py::test_reject_blank_and_preserve_existing[spaces] PASSED      [ 50%]
+test_web.py::test_reject_blank_and_preserve_existing[nonbreaking-space] PASSED [ 56%]
+test_web.py::test_no_selection_preserves_data[complete-\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443 \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430!] PASSED [ 62%]
+test_web.py::test_no_selection_preserves_data[delete-\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443 \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f!] PASSED [ 68%]
+test_web.py::test_complete_selected_and_repeated_warning FAILED          [ 75%]
+test_web.py::test_delete_selected_preserves_other_order_and_status PASSED [ 81%]
+test_web.py::test_delete_completed_task FAILED                           [ 87%]
+test_web.py::test_many_records_and_duplicate_titles FAILED               [ 93%]
+test_web.py::test_capture_real_browser_state FAILED                      [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_add_from_data_pool[digits] ________________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="80167318e270c95408a32318b961d371")>
+site = ('http://127.0.0.1:36231/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_add_from_data_pool_digits0/test.sqlite3'))
+record = {'case': 'digits', 'title': 'Задача 123-45'}
+
+    @pytest.mark.parametrize("record", DATA, ids=[x["case"] for x in DATA])
+    def test_add_from_data_pool(browser, site, record):
+        assert db_rows(site) == []
+        add(browser, record["title"])
+        rows = db_rows(site)
+>       assert len(rows) == 1 and rows[0][1:] == (record["title"], 0)
+E       assert (0 == 1)
+E        +  where 0 = len([])
+
+test_web.py:117: AssertionError
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:32] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:14:32] "GET /favicon.ico HTTP/1.1" 404 -
+--------------------------- Captured stderr teardown ---------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:32] "POST /add HTTP/1.1" 303 -
+________________ test_reject_blank_and_preserve_existing[empty] ________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="4cc143b3cf27a0d1d2e78338d5145a9f")>
+site = ('http://127.0.0.1:36379/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_reject_blank_and_preserve0/test.sqlite3'))
+title = ''
+
+    @pytest.mark.parametrize("title", ["", "   ", "\u00a0"], ids=["empty", "spaces", "nonbreaking-space"])
+    def test_reject_blank_and_preserve_existing(browser, site, title):
+        add(browser, "Существующая задача")
+        before = db_rows(site)
+        field = browser.find_element(By.ID, "task-input")
+>       field.clear()
+
+test_web.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:147: in clear
+    self._execute(Command.CLEAR_ELEMENT)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:508: in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:432: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f344863ebd0>
+response = {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale elemen...\\n#23 0x55c7e2ce0383 \\u003Cunknown>\\n#24 0x7f46da69cb84 \\u003Cunknown>\\n#25 0x7f46da729ecc \\u003Cunknown>\\n"}}'}
+
+    def check_response(self, response: dict[str, Any]) -> None:
+        """Check that a JSON response from the WebDriver does not have an error.
+    
+        Args:
+            response: The JSON response from the WebDriver server as a dictionary
+                object.
+    
+        Raises:
+            WebDriverException: If the response contains an error message.
+        """
+        status = response.get("status", None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get("value", None)
+            if value_json and isinstance(value_json, str):
+                try:
+                    value = json.loads(value_json)
+                    if isinstance(value, dict):
+                        if len(value) == 1:
+                            value = value["value"]
+                        status = value.get("error", None)
+                        if not status:
+                            status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                            message = value.get("value") or value.get("message")
+                            if not isinstance(message, str):
+                                value = message
+                                message = message.get("message") if isinstance(message, dict) else None
+                        else:
+                            message = value.get("message", None)
+                except ValueError:
+                    pass
+    
+        exception_class: type[WebDriverException]
+        e = ErrorCode()
+        error_codes = [item for item in dir(e) if not item.startswith("__")]
+        for error_code in error_codes:
+            error_info = getattr(ErrorCode, error_code)
+            if isinstance(error_info, list) and status in error_info:
+                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
+                break
+        else:
+            exception_class = WebDriverException
+    
+        if not value:
+            value = response["value"]
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and "message" in value:
+            message = value["message"]
+    
+        screen = None  # type: ignore[assignment]
+        if "screen" in value:
+            screen = value["screen"]
+    
+        stacktrace = None
+        st_value = value.get("stackTrace") or value.get("stacktrace")
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split("\n")
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = frame.get("lineNumber", "")
+                        file = frame.get("fileName", "<anonymous>")
+                        if line:
+                            file = f"{file}:{line}"
+                        meth = frame.get("methodName", "<anonymous>")
+                        if "className" in frame:
+                            meth = f"{frame['className']}.{meth}"
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if "data" in value:
+                alert_text = value["data"].get("text")
+            elif "alert" in value:
+                alert_text = value["alert"].get("text")
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+>       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found
+E         (Session info: chrome=156.0.8078.73); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+E       Stacktrace:
+E       #0 0x55c7e2ce19c2 <unknown>
+E       #1 0x55c7e2609888 <unknown>
+E       #2 0x55c7e261f0ca <unknown>
+E       #3 0x55c7e261db52 <unknown>
+E       #4 0x55c7e261f5d9 <unknown>
+E       #5 0x55c7e261149c <unknown>
+E       #6 0x55c7e260ffab <unknown>
+E       #7 0x55c7e26136ab <unknown>
+E       #8 0x55c7e26137a5 <unknown>
+E       #9 0x55c7e2661a13 <unknown>
+E       #10 0x55c7e2656866 <unknown>
+E       #11 0x55c7e26531c2 <unknown>
+E       #12 0x55c7e26abf61 <unknown>
+E       #13 0x55c7e265153c <unknown>
+E       #14 0x55c7e2652495 <unknown>
+E       #15 0x55c7e2ca34de <unknown>
+E       #16 0x55c7e2ca203d <unknown>
+E       #17 0x55c7e2ca19ee <unknown>
+E       #18 0x55c7e2c90a28 <unknown>
+E       #19 0x55c7e2ca2866 <unknown>
+E       #20 0x55c7e2c7a4c9 <unknown>
+E       #21 0x55c7e2ccb799 <unknown>
+E       #22 0x55c7e2ccb983 <unknown>
+E       #23 0x55c7e2ce0383 <unknown>
+E       #24 0x7f46da69cb84 <unknown>
+E       #25 0x7f46da729ecc <unknown>
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:232: StaleElementReferenceException
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:40] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:14:40] "GET /favicon.ico HTTP/1.1" 404 -
+----------------------------- Captured stderr call -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:40] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:14:40] "GET / HTTP/1.1" 200 -
+_________________ test_complete_selected_and_repeated_warning __________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="3ef2294620cb9c9dd13331423521b4e9")>
+site = ('http://127.0.0.1:39685/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_complete_selected_and_rep0/test.sqlite3'))
+
+    def test_complete_selected_and_repeated_warning(browser, site):
+        for title in ("Первая", "Вторая", "Третья"):
+            add(browser, title)
+        before = db_rows(site)
+        target = before[1][0]
+        select(browser, target)
+        browser.find_element(By.ID, "complete").click()
+        expected = [before[0], (target, before[1][1], 1), before[2]]
+        assert db_rows(site) == expected
+        assert_ui_matches_db(browser, site)
+        select(browser, target)
+        browser.find_element(By.ID, "complete").click()
+        expect_alert(browser, "Эта задача уже выполнена")
+        assert db_rows(site) == expected
+        assert_ui_matches_db(browser, site)
+        browser.refresh()
+        assert db_rows(site) == expected
+>       assert_ui_matches_db(browser, site)
+
+test_web.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_web.py:81: in assert_ui_matches_db
+    assert ui_rows(driver) == expected
+           ^^^^^^^^^^^^^^^
+test_web.py:72: in ui_rows
+    for item in driver.find_elements(By.CSS_SELECTOR, "#task-list li"):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:833: in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:432: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f344863fda0>
+response = {'status': 500, 'value': '{"value":{"data":{"text":"Эта задача уже выполнена"},"error":"unexpected alert open","messag...\\n#13 0x55cd75b64383 \\u003Cunknown>\\n#14 0x7fd96229cb84 \\u003Cunknown>\\n#15 0x7fd962329ecc \\u003Cunknown>\\n"}}'}
+
+    def check_response(self, response: dict[str, Any]) -> None:
+        """Check that a JSON response from the WebDriver does not have an error.
+    
+        Args:
+            response: The JSON response from the WebDriver server as a dictionary
+                object.
+    
+        Raises:
+            WebDriverException: If the response contains an error message.
+        """
+        status = response.get("status", None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get("value", None)
+            if value_json and isinstance(value_json, str):
+                try:
+                    value = json.loads(value_json)
+                    if isinstance(value, dict):
+                        if len(value) == 1:
+                            value = value["value"]
+                        status = value.get("error", None)
+                        if not status:
+                            status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                            message = value.get("value") or value.get("message")
+                            if not isinstance(message, str):
+                                value = message
+                                message = message.get("message") if isinstance(message, dict) else None
+                        else:
+                            message = value.get("message", None)
+                except ValueError:
+                    pass
+    
+        exception_class: type[WebDriverException]
+        e = ErrorCode()
+        error_codes = [item for item in dir(e) if not item.startswith("__")]
+        for error_code in error_codes:
+            error_info = getattr(ErrorCode, error_code)
+            if isinstance(error_info, list) and status in error_info:
+                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
+                break
+        else:
+            exception_class = WebDriverException
+    
+        if not value:
+            value = response["value"]
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and "message" in value:
+            message = value["message"]
+    
+        screen = None  # type: ignore[assignment]
+        if "screen" in value:
+            screen = value["screen"]
+    
+        stacktrace = None
+        st_value = value.get("stackTrace") or value.get("stacktrace")
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split("\n")
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = frame.get("lineNumber", "")
+                        file = frame.get("fileName", "<anonymous>")
+                        if line:
+                            file = f"{file}:{line}"
+                        meth = frame.get("methodName", "<anonymous>")
+                        if "className" in frame:
+                            meth = f"{frame['className']}.{meth}"
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if "data" in value:
+                alert_text = value["data"].get("text")
+            elif "alert" in value:
+                alert_text = value["alert"].get("text")
+>           raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Эта задача уже выполнена
+E           Message: unexpected alert open: {Alert text : Эта задача уже выполнена}
+E             (Session info: chrome=156.0.8078.73)
+E           Stacktrace:
+E           #0 0x55cd75b659c2 <unknown>
+E           #1 0x55cd7548d888 <unknown>
+E           #2 0x55cd7552fc61 <unknown>
+E           #3 0x55cd754d553c <unknown>
+E           #4 0x55cd754d6495 <unknown>
+E           #5 0x55cd75b274de <unknown>
+E           #6 0x55cd75b2603d <unknown>
+E           #7 0x55cd75b259ee <unknown>
+E           #8 0x55cd75b14a28 <unknown>
+E           #9 0x55cd75b26866 <unknown>
+E           #10 0x55cd75afe4c9 <unknown>
+E           #11 0x55cd75b4f799 <unknown>
+E           #12 0x55cd75b4f983 <unknown>
+E           #13 0x55cd75b64383 <unknown>
+E           #14 0x7fd96229cb84 <unknown>
+E           #15 0x7fd962329ecc <unknown>
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:231: UnexpectedAlertPresentException
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:14:54] "GET /favicon.ico HTTP/1.1" 404 -
+----------------------------- Captured stderr call -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:14:54] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:14:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:55] "POST /complete HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:14:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:55] "POST /complete HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:14:55] "POST /complete HTTP/1.1" 200 -
+__________________________ test_delete_completed_task __________________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="6dfa89d989c3683e8585d87e144cc673")>
+site = ('http://127.0.0.1:38101/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_delete_completed_task0/test.sqlite3'))
+
+    def test_delete_completed_task(browser, site):
+        add(browser, "Удалить выполненную")
+        task_id = db_rows(site)[0][0]
+        select(browser, task_id)
+        browser.find_element(By.ID, "complete").click()
+        assert db_rows(site) == [(task_id, "Удалить выполненную", 1)]
+        assert_ui_matches_db(browser, site)
+        select(browser, task_id)
+        browser.find_element(By.ID, "delete").click()
+>       assert db_rows(site) == []
+E       AssertionError: assert [(1, 'Удалить...олненную', 1)] == []
+E         
+E         Left contains one more item: (1, 'Удалить выполненную', 1)
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     (...
+E         
+E         ...Full output truncated (5 lines hidden), use '-vv' to show
+
+test_web.py:195: AssertionError
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:00] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:15:00] "GET /favicon.ico HTTP/1.1" 404 -
+----------------------------- Captured stderr call -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:00] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:00] "POST /complete HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:00] "GET / HTTP/1.1" 200 -
+____________________ test_many_records_and_duplicate_titles ____________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="dd991198be8fada314c1bd71994ba553")>
+site = ('http://127.0.0.1:40589/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_many_records_and_duplicat0/test.sqlite3'))
+
+    def test_many_records_and_duplicate_titles(browser, site):
+        titles = ["Одинаковая запись" if n in (7, 22) else f"Массовая задача {n:02d}" for n in range(1, 31)]
+        assert db_rows(site) == []
+        for title in titles:
+>           add(browser, title)
+
+test_web.py:203: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_web.py:87: in add
+    field.send_keys(title)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:276: in send_keys
+    self._execute(
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:508: in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:432: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f34485a4a40>
+response = {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale elemen...\\n#24 0x562894825383 \\u003Cunknown>\\n#25 0x7ff1c3c9cb84 \\u003Cunknown>\\n#26 0x7ff1c3d29ecc \\u003Cunknown>\\n"}}'}
+
+    def check_response(self, response: dict[str, Any]) -> None:
+        """Check that a JSON response from the WebDriver does not have an error.
+    
+        Args:
+            response: The JSON response from the WebDriver server as a dictionary
+                object.
+    
+        Raises:
+            WebDriverException: If the response contains an error message.
+        """
+        status = response.get("status", None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get("value", None)
+            if value_json and isinstance(value_json, str):
+                try:
+                    value = json.loads(value_json)
+                    if isinstance(value, dict):
+                        if len(value) == 1:
+                            value = value["value"]
+                        status = value.get("error", None)
+                        if not status:
+                            status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                            message = value.get("value") or value.get("message")
+                            if not isinstance(message, str):
+                                value = message
+                                message = message.get("message") if isinstance(message, dict) else None
+                        else:
+                            message = value.get("message", None)
+                except ValueError:
+                    pass
+    
+        exception_class: type[WebDriverException]
+        e = ErrorCode()
+        error_codes = [item for item in dir(e) if not item.startswith("__")]
+        for error_code in error_codes:
+            error_info = getattr(ErrorCode, error_code)
+            if isinstance(error_info, list) and status in error_info:
+                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
+                break
+        else:
+            exception_class = WebDriverException
+    
+        if not value:
+            value = response["value"]
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and "message" in value:
+            message = value["message"]
+    
+        screen = None  # type: ignore[assignment]
+        if "screen" in value:
+            screen = value["screen"]
+    
+        stacktrace = None
+        st_value = value.get("stackTrace") or value.get("stacktrace")
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split("\n")
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = frame.get("lineNumber", "")
+                        file = frame.get("fileName", "<anonymous>")
+                        if line:
+                            file = f"{file}:{line}"
+                        meth = frame.get("methodName", "<anonymous>")
+                        if "className" in frame:
+                            meth = f"{frame['className']}.{meth}"
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if "data" in value:
+                alert_text = value["data"].get("text")
+            elif "alert" in value:
+                alert_text = value["alert"].get("text")
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+>       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found
+E         (Session info: chrome=156.0.8078.73); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+E       Stacktrace:
+E       #0 0x5628948269c2 <unknown>
+E       #1 0x56289414e888 <unknown>
+E       #2 0x5628941640ca <unknown>
+E       #3 0x562894162b52 <unknown>
+E       #4 0x5628941645d9 <unknown>
+E       #5 0x56289415649c <unknown>
+E       #6 0x562894154fab <unknown>
+E       #7 0x5628941586ab <unknown>
+E       #8 0x5628941587a5 <unknown>
+E       #9 0x5628941a44b3 <unknown>
+E       #10 0x5628941a456d <unknown>
+E       #11 0x56289419c275 <unknown>
+E       #12 0x5628941981c2 <unknown>
+E       #13 0x5628941f0f61 <unknown>
+E       #14 0x56289419653c <unknown>
+E       #15 0x562894197495 <unknown>
+E       #16 0x5628947e84de <unknown>
+E       #17 0x5628947e703d <unknown>
+E       #18 0x5628947e69ee <unknown>
+E       #19 0x5628947d5a28 <unknown>
+E       #20 0x5628947e7866 <unknown>
+E       #21 0x5628947bf4c9 <unknown>
+E       #22 0x562894810799 <unknown>
+E       #23 0x562894810983 <unknown>
+E       #24 0x562894825383 <unknown>
+E       #25 0x7ff1c3c9cb84 <unknown>
+E       #26 0x7ff1c3d29ecc <unknown>
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:232: StaleElementReferenceException
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET /favicon.ico HTTP/1.1" 404 -
+----------------------------- Captured stderr call -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:02] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:02] "GET / HTTP/1.1" 200 -
+_______________________ test_capture_real_browser_state ________________________
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="4dce4a7d850304ad26b444621543e7a9")>
+site = ('http://127.0.0.1:43831/', PosixPath('/home/ubuntu/labs_2_8/lab-8/.test-tmp/test_capture_real_browser_stat0/test.sqlite3'))
+
+    def test_capture_real_browser_state(browser, site):
+        add(browser, "Подготовить отчёт")
+>       add(browser, "Проверить сохранение")
+
+test_web.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_web.py:86: in add
+    field.clear()
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:147: in clear
+    self._execute(Command.CLEAR_ELEMENT)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:508: in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py:432: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f3446c69eb0>
+response = {'status': 500, 'value': '{"value":{"error":"unknown error","message":"unknown error: unhandled inspector error: {\\"c...\\n#27 0x55d93014a383 \\u003Cunknown>\\n#28 0x7fc38889cb84 \\u003Cunknown>\\n#29 0x7fc388929ecc \\u003Cunknown>\\n"}}'}
+
+    def check_response(self, response: dict[str, Any]) -> None:
+        """Check that a JSON response from the WebDriver does not have an error.
+    
+        Args:
+            response: The JSON response from the WebDriver server as a dictionary
+                object.
+    
+        Raises:
+            WebDriverException: If the response contains an error message.
+        """
+        status = response.get("status", None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get("value", None)
+            if value_json and isinstance(value_json, str):
+                try:
+                    value = json.loads(value_json)
+                    if isinstance(value, dict):
+                        if len(value) == 1:
+                            value = value["value"]
+                        status = value.get("error", None)
+                        if not status:
+                            status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                            message = value.get("value") or value.get("message")
+                            if not isinstance(message, str):
+                                value = message
+                                message = message.get("message") if isinstance(message, dict) else None
+                        else:
+                            message = value.get("message", None)
+                except ValueError:
+                    pass
+    
+        exception_class: type[WebDriverException]
+        e = ErrorCode()
+        error_codes = [item for item in dir(e) if not item.startswith("__")]
+        for error_code in error_codes:
+            error_info = getattr(ErrorCode, error_code)
+            if isinstance(error_info, list) and status in error_info:
+                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
+                break
+        else:
+            exception_class = WebDriverException
+    
+        if not value:
+            value = response["value"]
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and "message" in value:
+            message = value["message"]
+    
+        screen = None  # type: ignore[assignment]
+        if "screen" in value:
+            screen = value["screen"]
+    
+        stacktrace = None
+        st_value = value.get("stackTrace") or value.get("stacktrace")
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split("\n")
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = frame.get("lineNumber", "")
+                        file = frame.get("fileName", "<anonymous>")
+                        if line:
+                            file = f"{file}:{line}"
+                        meth = frame.get("methodName", "<anonymous>")
+                        if "className" in frame:
+                            meth = f"{frame['className']}.{meth}"
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if "data" in value:
+                alert_text = value["data"].get("text")
+            elif "alert" in value:
+                alert_text = value["alert"].get("text")
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+>       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+E         (Session info: chrome=156.0.8078.73)
+E       Stacktrace:
+E       #0 0x55d93014b9c2 <unknown>
+E       #1 0x55d92fa73888 <unknown>
+E       #2 0x55d92fa59ca9 <unknown>
+E       #3 0x55d92fa58ac8 <unknown>
+E       #4 0x55d92fa58d4a <unknown>
+E       #5 0x55d92fa86527 <unknown>
+E       #6 0x55d92fa892b4 <unknown>
+E       #7 0x55d92fa87b52 <unknown>
+E       #8 0x55d92fa895d9 <unknown>
+E       #9 0x55d92fa7b49c <unknown>
+E       #10 0x55d92fa79fab <unknown>
+E       #11 0x55d92fa7d6ab <unknown>
+E       #12 0x55d92fa7d7a5 <unknown>
+E       #13 0x55d92fac105b <unknown>
+E       #14 0x55d92fac06bb <unknown>
+E       #15 0x55d92fabd1c2 <unknown>
+E       #16 0x55d92fb15f61 <unknown>
+E       #17 0x55d92fabb53c <unknown>
+E       #18 0x55d92fabc495 <unknown>
+E       #19 0x55d93010d4de <unknown>
+E       #20 0x55d93010c03d <unknown>
+E       #21 0x55d93010b9ee <unknown>
+E       #22 0x55d9300faa28 <unknown>
+E       #23 0x55d93010c866 <unknown>
+E       #24 0x55d9300e44c9 <unknown>
+E       #25 0x55d930135799 <unknown>
+E       #26 0x55d930135983 <unknown>
+E       #27 0x55d93014a383 <unknown>
+E       #28 0x7fc38889cb84 <unknown>
+E       #29 0x7fc388929ecc <unknown>
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py:232: WebDriverException
+---------------------------- Captured stderr setup -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 09:15:04] code 404, message Not Found
+127.0.0.1 - - [18/Nov/2026 09:15:04] "GET /favicon.ico HTTP/1.1" 404 -
+----------------------------- Captured stderr call -----------------------------
+127.0.0.1 - - [18/Nov/2026 09:15:04] "POST /add HTTP/1.1" 303 -
+127.0.0.1 - - [18/Nov/2026 09:15:04] "GET / HTTP/1.1" 200 -
+=========================== short test summary info ============================
+FAILED test_web.py::test_add_from_data_pool[digits] - assert (0 == 1)
+FAILED test_web.py::test_reject_blank_and_preserve_existing[empty] - selenium...
+FAILED test_web.py::test_complete_selected_and_repeated_warning - selenium.co...
+FAILED test_web.py::test_delete_completed_task - AssertionError: assert [(1, ...
+FAILED test_web.py::test_many_records_and_duplicate_titles - selenium.common....
+FAILED test_web.py::test_capture_real_browser_state - selenium.common.excepti...
+======================== 6 failed, 10 passed in 42.32s =========================

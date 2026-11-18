@@ -1,0 +1,413 @@
+$ python3 -B -m unittest discover -s tests -v
+test_centimeters_to_meters (test_converter.BasicMetricTests.test_centimeters_to_meters) ... ok
+test_meters_to_centimeters (test_converter.BasicMetricTests.test_meters_to_centimeters) ... ok
+test_cross_system_conversion (test_converter.UnitSystemTests.test_cross_system_conversion) ... ERROR
+test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) ... 
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='mm') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='km') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='in') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='ft') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='yd') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='mi') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='vershok') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='arshin') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='sazhen') ... ERROR
+  test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='verst') ... ERROR
+test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) ... 
+  test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='in') ... ERROR
+  test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='ft') ... ERROR
+  test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='yd') ... ERROR
+  test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='mi') ... ERROR
+test_si_millimeters_and_kilometers (test_converter.UnitSystemTests.test_si_millimeters_and_kilometers) ... ERROR
+test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) ... 
+  test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='vershok') ... ERROR
+  test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='arshin') ... ERROR
+  test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='sazhen') ... ERROR
+  test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='verst') ... ERROR
+
+======================================================================
+ERROR: test_cross_system_conversion (test_converter.UnitSystemTests.test_cross_system_conversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'sazhen'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 38, in test_cross_system_conversion
+    self.assertEqual(self.converter.convert('1', 'sazhen', 'ft', 2), Decimal('7.00'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='mm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'mm'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='km')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'km'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='in')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'in'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='ft')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'ft'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='yd')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'yd'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='mi')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'mi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='vershok')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'vershok'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='arshin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'arshin'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='sazhen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'sazhen'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) (unit='verst')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'verst'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 45, in test_identity_for_all_units
+    self.assertEqual(self.converter.convert('3.25', unit, unit, 2), Decimal('3.25'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='in')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'in'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 29, in test_international_imperial_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='ft')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'ft'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 29, in test_international_imperial_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='yd')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'yd'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 29, in test_international_imperial_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) (unit='mi')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'mi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 29, in test_international_imperial_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_si_millimeters_and_kilometers (test_converter.UnitSystemTests.test_si_millimeters_and_kilometers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'km'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 23, in test_si_millimeters_and_kilometers
+    self.assertEqual(self.converter.convert('3', 'km', 'mm', 0), Decimal('3000000'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='vershok')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'vershok'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 35, in test_traditional_russian_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='arshin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'arshin'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 35, in test_traditional_russian_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='sazhen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'sazhen'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 35, in test_traditional_russian_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+======================================================================
+ERROR: test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) (unit='verst')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 12, in convert
+    result = amount * self.FACTORS[source] / self.FACTORS[target]
+                      ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'verst'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/labs_2_8/lab-5/project/tests/test_converter.py", line 35, in test_traditional_russian_factors_in_meters
+    self.assertEqual(self.converter.convert('1', unit, 'm', 8), Decimal(meters))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/labs_2_8/lab-5/project/converter.py", line 14, in convert
+    raise ValueError('Единица не поддерживается') from exc
+ValueError: Единица не поддерживается
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (errors=20)
+
+EXIT_CODE=1

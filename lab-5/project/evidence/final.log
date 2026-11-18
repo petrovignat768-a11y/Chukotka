@@ -1,0 +1,35 @@
+$ python3 -B -m unittest discover -s tests -v
+test_default_precision_and_negative_number (test_cli.CliTests.test_default_precision_and_negative_number) ... ok
+test_help_succeeds (test_cli.CliTests.test_help_succeeds) ... ok
+test_invalid_precision_and_missing_arguments (test_cli.CliTests.test_invalid_precision_and_missing_arguments) ... ok
+test_invalid_value_and_unit_exit_2_without_traceback (test_cli.CliTests.test_invalid_value_and_unit_exit_2_without_traceback) ... ok
+test_negative_scientific_number_after_double_dash (test_cli.CliTests.test_negative_scientific_number_after_double_dash) ... ok
+test_successful_conversion_and_output_precision (test_cli.CliTests.test_successful_conversion_and_output_precision) ... ok
+test_unit_list_matches_supported_codes (test_cli.CliTests.test_unit_list_matches_supported_codes) ... ok
+test_centimeters_to_meters (test_converter.BasicMetricTests.test_centimeters_to_meters) ... ok
+test_meters_to_centimeters (test_converter.BasicMetricTests.test_meters_to_centimeters) ... ok
+test_all_unit_pairs_against_exact_rational_oracle (test_converter.PrecisionAndMatrixTests.test_all_unit_pairs_against_exact_rational_oracle) ... ok
+test_external_decimal_context_does_not_change_results (test_converter.PrecisionAndMatrixTests.test_external_decimal_context_does_not_change_results) ... ok
+test_cross_system_conversion (test_converter.UnitSystemTests.test_cross_system_conversion) ... ok
+test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) ... ok
+test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) ... ok
+test_si_millimeters_and_kilometers (test_converter.UnitSystemTests.test_si_millimeters_and_kilometers) ... ok
+test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) ... ok
+test_half_up_positive_and_negative_ties (test_converter.ValidationAndRoundingTests.test_half_up_positive_and_negative_ties) ... ok
+test_invalid_places (test_converter.ValidationAndRoundingTests.test_invalid_places) ... ok
+test_range_inclusive_and_overflow (test_converter.ValidationAndRoundingTests.test_range_inclusive_and_overflow) ... ok
+test_reject_nonfinite_and_invalid_number_strings (test_converter.ValidationAndRoundingTests.test_reject_nonfinite_and_invalid_number_strings) ... ok
+test_reject_nonstring_and_overlong_input (test_converter.ValidationAndRoundingTests.test_reject_nonstring_and_overlong_input) ... ok
+test_rounding_eight_places_and_trailing_zeros (test_converter.ValidationAndRoundingTests.test_rounding_eight_places_and_trailing_zeros) ... ok
+test_rounding_zero_places (test_converter.ValidationAndRoundingTests.test_rounding_zero_places) ... ok
+test_scientific_decimal_syntax (test_converter.ValidationAndRoundingTests.test_scientific_decimal_syntax) ... ok
+test_small_negative_rounds_to_unsigned_zero (test_converter.ValidationAndRoundingTests.test_small_negative_rounds_to_unsigned_zero) ... ok
+test_unknown_or_wrong_case_units (test_converter.ValidationAndRoundingTests.test_unknown_or_wrong_case_units) ... ok
+test_zero_and_negative_are_valid (test_converter.ValidationAndRoundingTests.test_zero_and_negative_are_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.222s
+
+OK
+
+EXIT_CODE=0

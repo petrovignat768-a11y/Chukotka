@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.7.0 -- /home/ubuntu/labs_2_8/lab-8/.venv/bin/python
+rootdir: /home/ubuntu/labs_2_8/lab-8
+collecting ... collected 16 items
+
+test_web.py::test_initial_interface_and_storage PASSED                   [  6%]
+test_web.py::test_add_from_data_pool[cyrillic] PASSED                    [ 12%]
+test_web.py::test_add_from_data_pool[punctuation] PASSED                 [ 18%]
+test_web.py::test_add_from_data_pool[digits] PASSED                      [ 25%]
+test_web.py::test_add_from_data_pool[markup] PASSED                      [ 31%]
+test_web.py::test_add_from_data_pool[same_title] PASSED                  [ 37%]
+test_web.py::test_reject_blank_and_preserve_existing[empty] PASSED       [ 43%]
+test_web.py::test_reject_blank_and_preserve_existing[spaces] PASSED      [ 50%]
+test_web.py::test_reject_blank_and_preserve_existing[nonbreaking-space] PASSED [ 56%]
+test_web.py::test_no_selection_preserves_data[complete-\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443 \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430!] PASSED [ 62%]
+test_web.py::test_no_selection_preserves_data[delete-\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443 \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f!] PASSED [ 68%]
+test_web.py::test_complete_selected_and_repeated_warning PASSED          [ 75%]
+test_web.py::test_delete_selected_preserves_other_order_and_status PASSED [ 81%]
+test_web.py::test_delete_completed_task PASSED                           [ 87%]
+test_web.py::test_many_records_and_duplicate_titles PASSED               [ 93%]
+test_web.py::test_capture_real_browser_state PASSED                      [100%]
+
+============================= 16 passed in 49.84s ==============================

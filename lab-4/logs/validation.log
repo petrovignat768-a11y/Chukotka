@@ -1,0 +1,15 @@
+OK: REPORT.md: relative links exist
+OK: README.md: relative links exist
+OK: SPECIFICATION.md: relative links exist
+OK: APIDOC.md: relative links exist
+OK: CMakeLists.txt (959 bytes)
+OK: include/tracker/task_tracker.h (2877 bytes)
+OK: src/task_tracker.cpp (2520 bytes)
+OK: tests/task_tracker_test.cpp (11326 bytes)
+OK: tools/generate_api_doc.py (1768 bytes)
+OK: logs/test-run.log (21184 bytes)
+OK: logs/test-run-ansi.log (21247 bytes)
+OK: logs/coverage-run.log (13226 bytes)
+OK: logs/coverage-first-attempt.log (10142 bytes)
+OK: logs/coverage/task_tracker.cpp.gcov (7517 bytes)
+OK: both test summaries recorded

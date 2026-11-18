@@ -1,0 +1,324 @@
+{
+  "id": "57591bd4-04a6-41c8-b395-170e023aa92b",
+  "version": "2.0",
+  "name": "Трекер задач — лабораторная 8",
+  "url": "http://127.0.0.1:8765",
+  "tests": [
+    {
+      "id": "14fe3cb8-5f42-44eb-aeb7-47e274bbadda",
+      "name": "Создание и удаление",
+      "commands": [
+        {
+          "id": "4866f90d-1d06-410f-b7a3-ad93ffa8a47d",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e4f501ce-a2d3-4f8c-9325-603f4a02f286",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "Командный трекер задач — демо",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "99a37b17-bf43-498d-8506-15389095ee4b",
+          "comment": "",
+          "command": "type",
+          "target": "id=task-input",
+          "targets": [],
+          "value": "IDE создание и удаление"
+        },
+        {
+          "id": "3726fc28-515e-4084-8577-db81c6586a75",
+          "comment": "",
+          "command": "click",
+          "target": "id=add",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6a016fd3-614f-4155-b12e-9c44ddb1489b",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "47d7469e-10e4-452b-a0cd-f47d4ca2cce5",
+          "comment": "",
+          "command": "assertValue",
+          "target": "id=task-input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9f1b05fc-31c6-4ae6-88b6-42c0c2fcc1f1",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//span[@class='task-status']",
+          "targets": [],
+          "value": "[ ]"
+        },
+        {
+          "id": "b394eb53-8348-4c44-9b28-f949ae192474",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]//input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "f3670f33-c86e-4eee-839e-11d70773587f",
+          "comment": "",
+          "command": "click",
+          "target": "id=delete",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "af58887c-f8af-479e-9e37-ca23f9a54b3a",
+          "comment": "",
+          "command": "waitForElementNotPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "baaaa533-94cc-49ce-89dc-cfff013380b9",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE создание и удаление']]",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "44f3c370-7f32-4780-8b09-fd500906c366",
+      "name": "Завершение, повтор, очистка",
+      "commands": [
+        {
+          "id": "90f4104b-d716-4aca-b426-50ed166c4043",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "8fff9ab5-b192-4284-acde-0dc790d87c91",
+          "comment": "",
+          "command": "type",
+          "target": "id=task-input",
+          "targets": [],
+          "value": "IDE выполнение задачи"
+        },
+        {
+          "id": "b22f2b59-54aa-4b5b-8c3e-871d7200477d",
+          "comment": "",
+          "command": "click",
+          "target": "id=add",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "230847ee-a676-4d07-a4de-033030addd72",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "aef92f6e-5bf1-4aa5-9cba-c50dfe68d5de",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "4291d0b7-f3b9-4fe6-b611-11ea6416a660",
+          "comment": "",
+          "command": "click",
+          "target": "id=complete",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cfa78dee-d938-42ca-8fe0-389adfa73c1b",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status' and text()='[✓]']",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "210b3a0a-68c0-4632-b3e9-9e96e330d18a",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//span[@class='task-status']",
+          "targets": [],
+          "value": "[✓]"
+        },
+        {
+          "id": "69b62654-befa-4824-acab-e4989d663245",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "12744d8c-e5d6-443e-a7a5-568286d2bc1a",
+          "comment": "",
+          "command": "click",
+          "target": "id=complete",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "57b1502a-36e8-4b58-9604-9a478ef12607",
+          "comment": "",
+          "command": "pause",
+          "target": "500",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "1cd9d6a9-d745-441b-bd94-c37feb328dca",
+          "comment": "",
+          "command": "assertAlert",
+          "target": "Эта задача уже выполнена",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "4320fbe7-f70e-400b-9f05-aacb2a1c62b2",
+          "comment": "",
+          "command": "acceptAlert",
+          "target": "",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2cb9e149-bf2d-4665-89a0-a6bf47524b16",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]//input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e1411105-cf01-4654-a3f1-8a90dea2127b",
+          "comment": "",
+          "command": "click",
+          "target": "id=delete",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "f3fbfd9c-6d43-4b55-9d5e-61c6f6dc4add",
+          "comment": "",
+          "command": "waitForElementNotPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "de5dd3ea-934c-4706-8bb0-5029232e2724",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "xpath=//li[.//span[@class='task-title' and text()='IDE выполнение задачи']]",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "24374fa6-f0a1-4a30-abfe-ff8da1b6cbef",
+      "name": "Предупреждение при пустом вводе",
+      "commands": [
+        {
+          "id": "3ccae434-1bb8-45b8-a4c8-8003f9146ba7",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "30eea9fd-a6c9-4310-8eef-644706fbceb2",
+          "comment": "",
+          "command": "type",
+          "target": "id=task-input",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c91cccf7-72dc-4e31-b06d-65cbf32a934b",
+          "comment": "",
+          "command": "click",
+          "target": "id=add",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2bf49330-bdcc-4c92-a468-c1032ff387fa",
+          "comment": "",
+          "command": "pause",
+          "target": "500",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "05168311-a5f9-4ae6-8aaf-4bab3dcbf59f",
+          "comment": "",
+          "command": "assertAlert",
+          "target": "Текст задачи не может быть пустым!",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "dcf55a6a-6d55-42da-920d-416a78ec7ec9",
+          "comment": "",
+          "command": "acceptAlert",
+          "target": "",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "03025b59-5d40-4fd4-9414-6e91429b92c7",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=task-input",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "97319626-1834-4073-8398-401c2be598fa",
+      "name": "Основной набор",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "14fe3cb8-5f42-44eb-aeb7-47e274bbadda",
+        "44f3c370-7f32-4780-8b09-fd500906c366",
+        "24374fa6-f0a1-4a30-abfe-ff8da1b6cbef"
+      ]
+    }
+  ],
+  "urls": [
+    "http://127.0.0.1:8765/"
+  ],
+  "plugins": []
+}

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2d03debf-3142-4a4c-9670-00fa32f1a00d" name="@15359ddd77fb 2026-11-18 08:49:40" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-18T08:49:40.9700211+00:00" queuing="2026-11-18T08:49:40.9700212+00:00" start="2026-11-18T08:49:40.2638501+00:00" finish="2026-11-18T08:49:41.1283807+00:00" />
+  <TestSettings name="default" id="04f82ab1-6f1d-4790-83eb-85202a63afe7">
+    <Deployment runDeploymentRoot="_15359ddd77fb_2026-11-18_08_49_40" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2e64a5a6-19da-441c-a7ba-f2a30f933913" testId="e5edd537-17d9-e165-c965-ac77f643607a" testName="SeparateTrackers_DoNotShareTasks" computerName="15359ddd77fb" duration="00:00:00.0010845" startTime="2026-11-18T08:49:40.9125051+00:00" endTime="2026-11-18T08:49:40.9137583+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e64a5a6-19da-441c-a7ba-f2a30f933913" />
+    <UnitTestResult executionId="0904a44d-7a45-4543-88ce-9fc4d7fcfc59" testId="a31c69aa-2e1a-1417-031f-e9e2b692a78e" testName="CompleteTask_OutOfRange_ThrowsAndPreservesState (-2147483648)" computerName="15359ddd77fb" duration="00:00:00.0000342" startTime="2026-11-18T08:49:40.9489480+00:00" endTime="2026-11-18T08:49:40.9490330+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0904a44d-7a45-4543-88ce-9fc4d7fcfc59" />
+    <UnitTestResult executionId="052476de-c546-410c-916c-b7279f1d5fdf" testId="4b704122-f433-c3aa-f182-682f740bc1cb" testName="DeleteTask_DuplicateSelectedByIndex_DeletesCorrectOccurrence" computerName="15359ddd77fb" duration="00:00:00.0000698" startTime="2026-11-18T08:49:40.9569464+00:00" endTime="2026-11-18T08:49:40.9570510+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="052476de-c546-410c-916c-b7279f1d5fdf" />
+    <UnitTestResult executionId="77c5098f-bdd9-48eb-b781-5e8d338cd84e" testId="53f4bfd2-e2e9-09ea-8fbd-b74d91b21e33" testName="NewTracker_HasEmptySnapshot" computerName="15359ddd77fb" duration="00:00:00.0034514" startTime="2026-11-18T08:49:40.8944680+00:00" endTime="2026-11-18T08:49:40.9058638+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77c5098f-bdd9-48eb-b781-5e8d338cd84e" />
+    <UnitTestResult executionId="ba67f502-9dc6-472f-9867-fb8dd525ee13" testId="608a1cef-1af1-9bb6-5981-288398acf867" testName="DeleteTask_OutOfRange_ThrowsAndPreservesState (3)" computerName="15359ddd77fb" duration="00:00:00.0001327" startTime="2026-11-18T08:49:40.9552654+00:00" endTime="2026-11-18T08:49:40.9554636+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba67f502-9dc6-472f-9867-fb8dd525ee13" />
+    <UnitTestResult executionId="35f25d85-22de-4f20-9fb3-79b20722b339" testId="f6d367e6-07b3-cbbb-7b09-e00f32efadcb" testName="CompleteTask_AlreadyCompleted_ShowsWarningAndDoesNotChangeState" computerName="15359ddd77fb" duration="00:00:00.0001158" startTime="2026-11-18T08:49:40.9466371+00:00" endTime="2026-11-18T08:49:40.9467862+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35f25d85-22de-4f20-9fb3-79b20722b339" />
+    <UnitTestResult executionId="d1db0e4f-3a99-4afe-8d6c-8924f474c41c" testId="e1f4e05e-dda3-7531-00ae-d56cc8144b8d" testName="AddTask_LongText_IsPreserved" computerName="15359ddd77fb" duration="00:00:00.0001323" startTime="2026-11-18T08:49:40.9195857+00:00" endTime="2026-11-18T08:49:40.9197574+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1db0e4f-3a99-4afe-8d6c-8924f474c41c" />
+    <UnitTestResult executionId="dfc7c7c3-b9c0-49fa-90e4-55e124f479af" testId="d0d15c75-2861-1233-7f7e-304241d790d6" testName="CompleteTask_OutOfRange_ThrowsAndPreservesState (2147483647)" computerName="15359ddd77fb" duration="00:00:00.0000206" startTime="2026-11-18T08:49:40.9493089+00:00" endTime="2026-11-18T08:49:40.9493636+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfc7c7c3-b9c0-49fa-90e4-55e124f479af" />
+    <UnitTestResult executionId="4c570542-2120-411b-809b-d1449a1e018a" testId="6a40983b-d66a-5e14-99a3-2f6781e9a61f" testName="GetTasks_SnapshotIsReadOnlyAndDoesNotTrackSubsequentChanges" computerName="15359ddd77fb" duration="00:00:00.0004692" startTime="2026-11-18T08:49:40.9573089+00:00" endTime="2026-11-18T08:49:40.9578105+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c570542-2120-411b-809b-d1449a1e018a" />
+    <UnitTestResult executionId="5bf32a6b-012f-4cb5-94e8-78b9073cfc8b" testId="914bd6c3-bbab-d5a5-6525-27d9e8a33d11" testName="DeleteTask_OutOfRange_ThrowsAndPreservesState (2147483647)" computerName="15359ddd77fb" duration="00:00:00.0000180" startTime="2026-11-18T08:49:40.9561772+00:00" endTime="2026-11-18T08:49:40.9562283+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5bf32a6b-012f-4cb5-94e8-78b9073cfc8b" />
+    <UnitTestResult executionId="e9ec3ca9-564f-43a7-97c3-3d504e5efbda" testId="8568104d-7da1-95f2-f7d7-15b2b95e6f4e" testName="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (2,&quot;[ ] First&quot;,&quot;[✓] Middle&quot;)" computerName="15359ddd77fb" duration="00:00:00.0000059" startTime="2026-11-18T08:49:40.9525782+00:00" endTime="2026-11-18T08:49:40.9526502+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9ec3ca9-564f-43a7-97c3-3d504e5efbda" />
+    <UnitTestResult executionId="96149100-d8f5-40da-baea-753d1e473969" testId="97d1c66a-c804-f483-1ff0-1249ee42699b" testName="DeleteTask_NoSelection_ShowsWarningWithoutChanges (False)" computerName="15359ddd77fb" duration="00:00:00.0001496" startTime="2026-11-18T08:49:40.9506117+00:00" endTime="2026-11-18T08:49:40.9508154+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96149100-d8f5-40da-baea-753d1e473969" />
+    <UnitTestResult executionId="314717a6-07c1-4151-929a-f9d3b61c14cf" testId="76771efc-6cfe-210d-cd59-02f1f56fa19d" testName="CompleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" computerName="15359ddd77fb" duration="00:00:00.0001209" startTime="2026-11-18T08:49:40.9501653+00:00" endTime="2026-11-18T08:49:40.9503253+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="314717a6-07c1-4151-929a-f9d3b61c14cf" />
+    <UnitTestResult executionId="767bd331-4235-4751-b088-2ad6d2196fb8" testId="c62ba51d-16a4-8864-1147-816cf1304847" testName="CompleteTask_NoSelection_ShowsWarningWithoutChanges (True)" computerName="15359ddd77fb" duration="00:00:00.0001334" startTime="2026-11-18T08:49:40.9428966+00:00" endTime="2026-11-18T08:49:40.9431222+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="767bd331-4235-4751-b088-2ad6d2196fb8" />
+    <UnitTestResult executionId="d8b4e7e6-377a-4cac-b235-6fca7d0c4c80" testId="1809d3b6-913f-c162-8cf1-63648b506e93" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;     &quot;)" computerName="15359ddd77fb" duration="00:00:00.0000123" startTime="2026-11-18T08:49:40.9385284+00:00" endTime="2026-11-18T08:49:40.9386153+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d8b4e7e6-377a-4cac-b235-6fca7d0c4c80" />
+    <UnitTestResult executionId="08e996f7-95d6-4443-af64-22ee0da22385" testId="0589eb4d-7ab5-0013-acf4-892d97cb3737" testName="DeleteTask_OutOfRange_ThrowsAndPreservesState (-1)" computerName="15359ddd77fb" duration="00:00:00.0001811" startTime="2026-11-18T08:49:40.9538453+00:00" endTime="2026-11-18T08:49:40.9540903+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08e996f7-95d6-4443-af64-22ee0da22385" />
+    <UnitTestResult executionId="4ec3e969-6bbe-4d77-ad26-1f2d4cbab0ed" testId="41cf2b83-005c-d9fa-39ce-88e3f1cb2c6c" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&quot;)" computerName="15359ddd77fb" duration="00:00:00.0002187" startTime="2026-11-18T08:49:40.9200266+00:00" endTime="2026-11-18T08:49:40.9203043+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ec3e969-6bbe-4d77-ad26-1f2d4cbab0ed" />
+    <UnitTestResult executionId="512ba7ee-8f6f-4570-ac42-3b861eee7c72" testId="08154c55-f12f-7681-5414-fc834390f37b" testName="DeleteTask_OutOfRange_ThrowsAndPreservesState (-2147483648)" computerName="15359ddd77fb" duration="00:00:00.0000272" startTime="2026-11-18T08:49:40.9558054+00:00" endTime="2026-11-18T08:49:40.9558924+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="512ba7ee-8f6f-4570-ac42-3b861eee7c72" />
+    <UnitTestResult executionId="76e06d5c-419e-4f4d-9038-39d87e2b0821" testId="d68326eb-2c0f-1af4-a606-f75299e87693" testName="CompleteTask_OutOfRange_ThrowsAndPreservesState (3)" computerName="15359ddd77fb" duration="00:00:00.0001531" startTime="2026-11-18T08:49:40.9483913+00:00" endTime="2026-11-18T08:49:40.9486065+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76e06d5c-419e-4f4d-9038-39d87e2b0821" />
+    <UnitTestResult executionId="f9d61647-8f2f-4841-a1b1-007f1c971466" testId="571de3e8-a184-8b5b-b3be-39d271af84ed" testName="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (0,&quot;[✓] Middle&quot;,&quot;[ ] Last&quot;)" computerName="15359ddd77fb" duration="00:00:00.0001169" startTime="2026-11-18T08:49:40.9515793+00:00" endTime="2026-11-18T08:49:40.9517694+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9d61647-8f2f-4841-a1b1-007f1c971466" />
+    <UnitTestResult executionId="c4d3e108-ab24-4977-b6b9-6d23ec7f8e68" testId="18875bd1-8ec3-2ffa-29a9-6ef0b58f91ad" testName="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus (False)" computerName="15359ddd77fb" duration="00:00:00.0000871" startTime="2026-11-18T08:49:40.9529543+00:00" endTime="2026-11-18T08:49:40.9530795+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4d3e108-ab24-4977-b6b9-6d23ec7f8e68" />
+    <UnitTestResult executionId="5265dc73-c314-4e1f-ad95-08b67acf9574" testId="9edabebf-b01b-3b21-bec7-85c0568dbd8d" testName="AddTask_Null_ReportsErrorAndDoesNotChangeList" computerName="15359ddd77fb" duration="00:00:00.0000699" startTime="2026-11-18T08:49:40.9401755+00:00" endTime="2026-11-18T08:49:40.9402947+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5265dc73-c314-4e1f-ad95-08b67acf9574" />
+    <UnitTestResult executionId="a954f079-a432-4efe-858f-31b076ac6338" testId="9b742d7e-adb5-ea98-7dba-d47955fa2479" testName="AddTask_ExistingTasksAndStatuses_ArePreservedAndNewItemIsLast" computerName="15359ddd77fb" duration="00:00:00.0000602" startTime="2026-11-18T08:49:40.9405431+00:00" endTime="2026-11-18T08:49:40.9406359+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a954f079-a432-4efe-858f-31b076ac6338" />
+    <UnitTestResult executionId="da3e9c48-1948-476a-b6e0-94e2e9df0da6" testId="bae21c0e-23b0-ebe0-bd4e-5b21b318609e" testName="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;  важная задача  &quot;)" computerName="15359ddd77fb" duration="00:00:00.0000072" startTime="2026-11-18T08:49:40.9177926+00:00" endTime="2026-11-18T08:49:40.9178693+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da3e9c48-1948-476a-b6e0-94e2e9df0da6" />
+    <UnitTestResult executionId="284c22a9-e066-46e0-815f-7e74d0ebe5f6" testId="a7440bff-b3ba-f414-444a-d3d1873c27af" testName="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus (True)" computerName="15359ddd77fb" duration="00:00:00.0000886" startTime="2026-11-18T08:49:40.9533811+00:00" endTime="2026-11-18T08:49:40.9535171+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="284c22a9-e066-46e0-815f-7e74d0ebe5f6" />
+    <UnitTestResult executionId="023cbfd0-c0ae-4737-b228-62979f4b90df" testId="488a1913-84c9-09eb-89da-96333d55fb3a" testName="AddTask_Duplicates_ProduceDistinctOrderedTasks" computerName="15359ddd77fb" duration="00:00:00.0000547" startTime="2026-11-18T08:49:40.9409120+00:00" endTime="2026-11-18T08:49:40.9410088+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="023cbfd0-c0ae-4737-b228-62979f4b90df" />
+    <UnitTestResult executionId="45018e8f-d4f4-48e6-9f03-0e562b257ab4" testId="4dd8adb1-73a3-c556-bf84-1aee2030129d" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot; &quot;)" computerName="15359ddd77fb" duration="00:00:00.0000989" startTime="2026-11-18T08:49:40.9379060+00:00" endTime="2026-11-18T08:49:40.9381687+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45018e8f-d4f4-48e6-9f03-0e562b257ab4" />
+    <UnitTestResult executionId="3aafa999-505a-4ce2-aaf6-186658ce9336" testId="cde368b6-94fe-d42b-22eb-36d614168eb3" testName="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;Купить хлеб&quot;)" computerName="15359ddd77fb" duration="00:00:00.0001115" startTime="2026-11-18T08:49:40.9172158+00:00" endTime="2026-11-18T08:49:40.9174518+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3aafa999-505a-4ce2-aaf6-186658ce9336" />
+    <UnitTestResult executionId="422a336f-a7e5-45b6-a01b-55e0c57f8e07" testId="73ce09c4-d27e-924b-69c5-107eeb222f44" testName="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (1,&quot;[ ] First&quot;,&quot;[ ] Last&quot;)" computerName="15359ddd77fb" duration="00:00:00.0001199" startTime="2026-11-18T08:49:40.9520842+00:00" endTime="2026-11-18T08:49:40.9522653+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="422a336f-a7e5-45b6-a01b-55e0c57f8e07" />
+    <UnitTestResult executionId="1f192aeb-8362-4a87-87da-afe6ec7aea5a" testId="3d354352-d5ba-f389-2917-325a484869f7" testName="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (2)" computerName="15359ddd77fb" duration="00:00:00.0000072" startTime="2026-11-18T08:49:40.9463047+00:00" endTime="2026-11-18T08:49:40.9463685+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f192aeb-8362-4a87-87da-afe6ec7aea5a" />
+    <UnitTestResult executionId="a7c211c8-0eaa-4574-87db-bdae48f107c8" testId="920c864d-6f44-cb13-42f9-96fb99011693" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot; &quot;)" computerName="15359ddd77fb" duration="00:00:00.0000042" startTime="2026-11-18T08:49:40.9398903+00:00" endTime="2026-11-18T08:49:40.9399330+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7c211c8-0eaa-4574-87db-bdae48f107c8" />
+    <UnitTestResult executionId="5b0be02d-5eaf-48d7-a725-837f34bf681e" testId="9043351c-a4b6-5eb6-314f-5a94aa9be269" testName="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;A&quot;)" computerName="15359ddd77fb" duration="00:00:00.0008932" startTime="2026-11-18T08:49:40.9144160+00:00" endTime="2026-11-18T08:49:40.9168572+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b0be02d-5eaf-48d7-a725-837f34bf681e" />
+    <UnitTestResult executionId="390005c5-f87f-497c-8829-bb693933df7a" testId="1e46bc3b-7f69-060d-99f0-02d37eef0be4" testName="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;[✓] не статус, а текст \ud83d\ude80&quot;)" computerName="15359ddd77fb" duration="00:00:00.0000075" startTime="2026-11-18T08:49:40.9187934+00:00" endTime="2026-11-18T08:49:40.9193012+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="390005c5-f87f-497c-8829-bb693933df7a" />
+    <UnitTestResult executionId="57c99339-e2f8-4c50-b505-b3b62739be67" testId="e0cdc302-85a5-2a67-02c4-e83a96f7de54" testName="DeleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" computerName="15359ddd77fb" duration="00:00:00.0001356" startTime="2026-11-18T08:49:40.9564863+00:00" endTime="2026-11-18T08:49:40.9566507+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57c99339-e2f8-4c50-b505-b3b62739be67" />
+    <UnitTestResult executionId="db83789e-e1a5-4267-a87c-dba4c38fdeba" testId="df505511-35c0-a7e0-b615-1e6c0e25e540" testName="CompleteTask_NoSelection_ShowsWarningWithoutChanges (False)" computerName="15359ddd77fb" duration="00:00:00.0001262" startTime="2026-11-18T08:49:40.9412619+00:00" endTime="2026-11-18T08:49:40.9415584+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db83789e-e1a5-4267-a87c-dba4c38fdeba" />
+    <UnitTestResult executionId="06327c74-f647-42bd-a00e-44df1b132d87" testId="23bd72a0-5139-1e24-0539-077ab2964978" testName="CompleteTask_OutOfRange_ThrowsAndPreservesState (-1)" computerName="15359ddd77fb" duration="00:00:00.0008999" startTime="2026-11-18T08:49:40.9470759+00:00" endTime="2026-11-18T08:49:40.9480452+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="06327c74-f647-42bd-a00e-44df1b132d87" />
+    <UnitTestResult executionId="46fd6048-8c24-4614-bc27-23563c388ce5" testId="615679af-ce32-8e6d-e519-c7f461f76a55" testName="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (0)" computerName="15359ddd77fb" duration="00:00:00.0001930" startTime="2026-11-18T08:49:40.9434315+00:00" endTime="2026-11-18T08:49:40.9453983+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46fd6048-8c24-4614-bc27-23563c388ce5" />
+    <UnitTestResult executionId="c66295ba-4052-4d89-9809-ac609cdd6d26" testId="96d79bb3-2bf2-8dd5-9860-255726ae950b" testName="Workflow_AddCompleteDeleteAndAddAgain_EndsInExpectedState" computerName="15359ddd77fb" duration="00:00:00.0000835" startTime="2026-11-18T08:49:40.9581339+00:00" endTime="2026-11-18T08:49:40.9588400+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c66295ba-4052-4d89-9809-ac609cdd6d26" />
+    <UnitTestResult executionId="5f8af128-2fbc-427f-9541-846a13a412f9" testId="333dcc40-58d6-3a15-1a2d-e6cfcd044b19" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&#xD;&#xA;&quot;)" computerName="15359ddd77fb" duration="00:00:00.0000039" startTime="2026-11-18T08:49:40.9395759+00:00" endTime="2026-11-18T08:49:40.9396135+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f8af128-2fbc-427f-9541-846a13a412f9" />
+    <UnitTestResult executionId="0f1756ea-c23f-4f1a-a64b-aeb21b6e2063" testId="94faa1e5-8224-d233-5717-c974efbe176f" testName="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&#x9;&quot;)" computerName="15359ddd77fb" duration="00:00:00.0000092" startTime="2026-11-18T08:49:40.9392389+00:00" endTime="2026-11-18T08:49:40.9393085+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f1756ea-c23f-4f1a-a64b-aeb21b6e2063" />
+    <UnitTestResult executionId="be114678-bfc7-4d71-ad1c-f15ae6d7e137" testId="27b2f1e3-d7d4-8de2-c93e-8abedc94555d" testName="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (1)" computerName="15359ddd77fb" duration="00:00:00.0001023" startTime="2026-11-18T08:49:40.9457456+00:00" endTime="2026-11-18T08:49:40.9459168+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be114678-bfc7-4d71-ad1c-f15ae6d7e137" />
+    <UnitTestResult executionId="67466b35-cec9-4bb1-bde1-f9ca026bfcf0" testId="e937bf57-2eaf-552e-fd33-121f04a5d964" testName="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;&#x9;A&#xA;&quot;)" computerName="15359ddd77fb" duration="00:00:00.0000059" startTime="2026-11-18T08:49:40.9183386+00:00" endTime="2026-11-18T08:49:40.9184866+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67466b35-cec9-4bb1-bde1-f9ca026bfcf0" />
+    <UnitTestResult executionId="aa9d6d49-0fbc-40b2-a5bd-648d25271975" testId="c0cd6a60-d0f4-ef56-fde8-35be3dbebbba" testName="DeleteTask_NoSelection_ShowsWarningWithoutChanges (True)" computerName="15359ddd77fb" duration="00:00:00.0001032" startTime="2026-11-18T08:49:40.9511185+00:00" endTime="2026-11-18T08:49:40.9512743+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa9d6d49-0fbc-40b2-a5bd-648d25271975" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;A&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="9043351c-a4b6-5eb6-314f-5a94aa9be269">
+      <Execution id="5b0be02d-5eaf-48d7-a725-837f34bf681e" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ValidText_AppendsAndRequestsInputClear" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OutOfRange_ThrowsAndPreservesState (-1)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="0589eb4d-7ab5-0013-acf4-892d97cb3737">
+      <Execution id="08e996f7-95d6-4443-af64-22ee0da22385" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="SeparateTrackers_DoNotShareTasks" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="e5edd537-17d9-e165-c965-ac77f643607a">
+      <Execution id="2e64a5a6-19da-441c-a7ba-f2a30f933913" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="SeparateTrackers_DoNotShareTasks" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus (True)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="a7440bff-b3ba-f414-444a-d3d1873c27af">
+      <Execution id="284c22a9-e066-46e0-815f-7e74d0ebe5f6" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_NoSelection_ShowsWarningWithoutChanges (False)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="df505511-35c0-a7e0-b615-1e6c0e25e540">
+      <Execution id="db83789e-e1a5-4267-a87c-dba4c38fdeba" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_NoSelection_ShowsWarningWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus (False)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="18875bd1-8ec3-2ffa-29a9-6ef0b58f91ad">
+      <Execution id="c4d3e108-ab24-4977-b6b9-6d23ec7f8e68" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OnlyItem_LeavesEmptyListForEitherStatus" />
+    </UnitTest>
+    <UnitTest name="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;Купить хлеб&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="cde368b6-94fe-d42b-22eb-36d614168eb3">
+      <Execution id="3aafa999-505a-4ce2-aaf6-186658ce9336" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ValidText_AppendsAndRequestsInputClear" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (0,&quot;[✓] Middle&quot;,&quot;[ ] Last&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="571de3e8-a184-8b5b-b3be-39d271af84ed">
+      <Execution id="f9d61647-8f2f-4841-a1b1-007f1c971466" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder" />
+    </UnitTest>
+    <UnitTest name="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;  важная задача  &quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="bae21c0e-23b0-ebe0-bd4e-5b21b318609e">
+      <Execution id="da3e9c48-1948-476a-b6e0-94e2e9df0da6" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ValidText_AppendsAndRequestsInputClear" />
+    </UnitTest>
+    <UnitTest name="GetTasks_SnapshotIsReadOnlyAndDoesNotTrackSubsequentChanges" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="6a40983b-d66a-5e14-99a3-2f6781e9a61f">
+      <Execution id="4c570542-2120-411b-809b-d1449a1e018a" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="GetTasks_SnapshotIsReadOnlyAndDoesNotTrackSubsequentChanges" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (2)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="3d354352-d5ba-f389-2917-325a484869f7">
+      <Execution id="1f192aeb-8362-4a87-87da-afe6ec7aea5a" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&#xD;&#xA;&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="333dcc40-58d6-3a15-1a2d-e6cfcd044b19">
+      <Execution id="5f8af128-2fbc-427f-9541-846a13a412f9" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_NoSelection_ShowsWarningWithoutChanges (False)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="97d1c66a-c804-f483-1ff0-1249ee42699b">
+      <Execution id="96149100-d8f5-40da-baea-753d1e473969" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_NoSelection_ShowsWarningWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_AlreadyCompleted_ShowsWarningAndDoesNotChangeState" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="f6d367e6-07b3-cbbb-7b09-e00f32efadcb">
+      <Execution id="35f25d85-22de-4f20-9fb3-79b20722b339" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_AlreadyCompleted_ShowsWarningAndDoesNotChangeState" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_NoSelection_ShowsWarningWithoutChanges (True)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="c0cd6a60-d0f4-ef56-fde8-35be3dbebbba">
+      <Execution id="aa9d6d49-0fbc-40b2-a5bd-648d25271975" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_NoSelection_ShowsWarningWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;     &quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="1809d3b6-913f-c162-8cf1-63648b506e93">
+      <Execution id="d8b4e7e6-377a-4cac-b235-6fca7d0c4c80" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_OutOfRange_ThrowsAndPreservesState (3)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="d68326eb-2c0f-1af4-a606-f75299e87693">
+      <Execution id="76e06d5c-419e-4f4d-9038-39d87e2b0821" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_OutOfRange_ThrowsAndPreservesState (-1)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="23bd72a0-5139-1e24-0539-077ab2964978">
+      <Execution id="06327c74-f647-42bd-a00e-44df1b132d87" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OutOfRange_ThrowsAndPreservesState (3)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="608a1cef-1af1-9bb6-5981-288398acf867">
+      <Execution id="ba67f502-9dc6-472f-9867-fb8dd525ee13" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_DuplicateSelectedByIndex_DeletesCorrectOccurrence" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="4b704122-f433-c3aa-f182-682f740bc1cb">
+      <Execution id="052476de-c546-410c-916c-b7279f1d5fdf" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_DuplicateSelectedByIndex_DeletesCorrectOccurrence" />
+    </UnitTest>
+    <UnitTest name="Workflow_AddCompleteDeleteAndAddAgain_EndsInExpectedState" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="96d79bb3-2bf2-8dd5-9860-255726ae950b">
+      <Execution id="c66295ba-4052-4d89-9809-ac609cdd6d26" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="Workflow_AddCompleteDeleteAndAddAgain_EndsInExpectedState" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_NoSelection_ShowsWarningWithoutChanges (True)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="c62ba51d-16a4-8864-1147-816cf1304847">
+      <Execution id="767bd331-4235-4751-b088-2ad6d2196fb8" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_NoSelection_ShowsWarningWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OutOfRange_ThrowsAndPreservesState (2147483647)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="914bd6c3-bbab-d5a5-6525-27d9e8a33d11">
+      <Execution id="5bf32a6b-012f-4cb5-94e8-78b9073cfc8b" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="AddTask_Duplicates_ProduceDistinctOrderedTasks" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="488a1913-84c9-09eb-89da-96333d55fb3a">
+      <Execution id="023cbfd0-c0ae-4737-b228-62979f4b90df" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Duplicates_ProduceDistinctOrderedTasks" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="e0cdc302-85a5-2a67-02c4-e83a96f7de54">
+      <Execution id="57c99339-e2f8-4c50-b505-b3b62739be67" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;&#x9;A&#xA;&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="e937bf57-2eaf-552e-fd33-121f04a5d964">
+      <Execution id="67466b35-cec9-4bb1-bde1-f9ca026bfcf0" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ValidText_AppendsAndRequestsInputClear" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot; &quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="920c864d-6f44-cb13-42f9-96fb99011693">
+      <Execution id="a7c211c8-0eaa-4574-87db-bdae48f107c8" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="AddTask_ValidText_AppendsAndRequestsInputClear (&quot;[✓] не статус, а текст \ud83d\ude80&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="1e46bc3b-7f69-060d-99f0-02d37eef0be4">
+      <Execution id="390005c5-f87f-497c-8829-bb693933df7a" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ValidText_AppendsAndRequestsInputClear" />
+    </UnitTest>
+    <UnitTest name="NewTracker_HasEmptySnapshot" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="53f4bfd2-e2e9-09ea-8fbd-b74d91b21e33">
+      <Execution id="77c5098f-bdd9-48eb-b781-5e8d338cd84e" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="NewTracker_HasEmptySnapshot" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (0)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="615679af-ce32-8e6d-e519-c7f461f76a55">
+      <Execution id="46fd6048-8c24-4614-bc27-23563c388ce5" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_OutOfRange_ThrowsAndPreservesState (-2147483648)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="a31c69aa-2e1a-1417-031f-e9e2b692a78e">
+      <Execution id="0904a44d-7a45-4543-88ce-9fc4d7fcfc59" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="41cf2b83-005c-d9fa-39ce-88e3f1cb2c6c">
+      <Execution id="4ec3e969-6bbe-4d77-ad26-1f2d4cbab0ed" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_OutOfRange_ThrowsAndPreservesState (2147483647)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="d0d15c75-2861-1233-7f7e-304241d790d6">
+      <Execution id="dfc7c7c3-b9c0-49fa-90e4-55e124f479af" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot;&#x9;&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="94faa1e5-8224-d233-5717-c974efbe176f">
+      <Execution id="0f1756ea-c23f-4f1a-a64b-aeb21b6e2063" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus (1)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="27b2f1e3-d7d4-8de2-c93e-8abedc94555d">
+      <Execution id="be114678-bfc7-4d71-ad1c-f15ae6d7e137" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_FirstMiddleOrLast_ChangesOnlySelectedStatus" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (2,&quot;[ ] First&quot;,&quot;[✓] Middle&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="8568104d-7da1-95f2-f7d7-15b2b95e6f4e">
+      <Execution id="e9ec3ca9-564f-43a7-97c3-3d504e5efbda" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder" />
+    </UnitTest>
+    <UnitTest name="AddTask_LongText_IsPreserved" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="e1f4e05e-dda3-7531-00ae-d56cc8144b8d">
+      <Execution id="d1db0e4f-3a99-4afe-8d6c-8924f474c41c" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_LongText_IsPreserved" />
+    </UnitTest>
+    <UnitTest name="CompleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="76771efc-6cfe-210d-cd59-02f1f56fa19d">
+      <Execution id="314717a6-07c1-4151-929a-f9d3b61c14cf" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="CompleteTask_IndexZeroInEmptyList_ThrowsWithoutChanges" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_OutOfRange_ThrowsAndPreservesState (-2147483648)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="08154c55-f12f-7681-5414-fc834390f37b">
+      <Execution id="512ba7ee-8f6f-4570-ac42-3b861eee7c72" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_OutOfRange_ThrowsAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder (1,&quot;[ ] First&quot;,&quot;[ ] Last&quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="73ce09c4-d27e-924b-69c5-107eeb222f44">
+      <Execution id="422a336f-a7e5-45b6-a01b-55e0c57f8e07" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="DeleteTask_FirstMiddleOrLast_PreservesOthersInOrder" />
+    </UnitTest>
+    <UnitTest name="AddTask_Whitespace_ReportsErrorAndPreservesState (&quot; &quot;)" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="4dd8adb1-73a3-c556-bf84-1aee2030129d">
+      <Execution id="45018e8f-d4f4-48e6-9f03-0e562b257ab4" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Whitespace_ReportsErrorAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="AddTask_ExistingTasksAndStatuses_ArePreservedAndNewItemIsLast" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="9b742d7e-adb5-ea98-7dba-d47955fa2479">
+      <Execution id="a954f079-a432-4efe-858f-31b076ac6338" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_ExistingTasksAndStatuses_ArePreservedAndNewItemIsLast" />
+    </UnitTest>
+    <UnitTest name="AddTask_Null_ReportsErrorAndDoesNotChangeList" storage="/home/ubuntu/labs_2_8/lab-3/tests/tasktracker.tests/bin/release/net8.0/tasktracker.tests.dll" id="9edabebf-b01b-3b21-bec7-85c0568dbd8d">
+      <Execution id="5265dc73-c314-4e1f-ad95-08b67acf9574" />
+      <TestMethod codeBase="/home/ubuntu/labs_2_8/lab-3/tests/TaskTracker.Tests/bin/Release/net8.0/TaskTracker.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="Lab3.TaskTracker.Tests.TrackerTests" name="AddTask_Null_ReportsErrorAndDoesNotChangeList" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e5edd537-17d9-e165-c965-ac77f643607a" executionId="2e64a5a6-19da-441c-a7ba-f2a30f933913" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a31c69aa-2e1a-1417-031f-e9e2b692a78e" executionId="0904a44d-7a45-4543-88ce-9fc4d7fcfc59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b704122-f433-c3aa-f182-682f740bc1cb" executionId="052476de-c546-410c-916c-b7279f1d5fdf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53f4bfd2-e2e9-09ea-8fbd-b74d91b21e33" executionId="77c5098f-bdd9-48eb-b781-5e8d338cd84e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="608a1cef-1af1-9bb6-5981-288398acf867" executionId="ba67f502-9dc6-472f-9867-fb8dd525ee13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f6d367e6-07b3-cbbb-7b09-e00f32efadcb" executionId="35f25d85-22de-4f20-9fb3-79b20722b339" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1f4e05e-dda3-7531-00ae-d56cc8144b8d" executionId="d1db0e4f-3a99-4afe-8d6c-8924f474c41c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0d15c75-2861-1233-7f7e-304241d790d6" executionId="dfc7c7c3-b9c0-49fa-90e4-55e124f479af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a40983b-d66a-5e14-99a3-2f6781e9a61f" executionId="4c570542-2120-411b-809b-d1449a1e018a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="914bd6c3-bbab-d5a5-6525-27d9e8a33d11" executionId="5bf32a6b-012f-4cb5-94e8-78b9073cfc8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8568104d-7da1-95f2-f7d7-15b2b95e6f4e" executionId="e9ec3ca9-564f-43a7-97c3-3d504e5efbda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="97d1c66a-c804-f483-1ff0-1249ee42699b" executionId="96149100-d8f5-40da-baea-753d1e473969" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="76771efc-6cfe-210d-cd59-02f1f56fa19d" executionId="314717a6-07c1-4151-929a-f9d3b61c14cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c62ba51d-16a4-8864-1147-816cf1304847" executionId="767bd331-4235-4751-b088-2ad6d2196fb8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1809d3b6-913f-c162-8cf1-63648b506e93" executionId="d8b4e7e6-377a-4cac-b235-6fca7d0c4c80" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0589eb4d-7ab5-0013-acf4-892d97cb3737" executionId="08e996f7-95d6-4443-af64-22ee0da22385" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41cf2b83-005c-d9fa-39ce-88e3f1cb2c6c" executionId="4ec3e969-6bbe-4d77-ad26-1f2d4cbab0ed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08154c55-f12f-7681-5414-fc834390f37b" executionId="512ba7ee-8f6f-4570-ac42-3b861eee7c72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d68326eb-2c0f-1af4-a606-f75299e87693" executionId="76e06d5c-419e-4f4d-9038-39d87e2b0821" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="571de3e8-a184-8b5b-b3be-39d271af84ed" executionId="f9d61647-8f2f-4841-a1b1-007f1c971466" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18875bd1-8ec3-2ffa-29a9-6ef0b58f91ad" executionId="c4d3e108-ab24-4977-b6b9-6d23ec7f8e68" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9edabebf-b01b-3b21-bec7-85c0568dbd8d" executionId="5265dc73-c314-4e1f-ad95-08b67acf9574" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b742d7e-adb5-ea98-7dba-d47955fa2479" executionId="a954f079-a432-4efe-858f-31b076ac6338" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bae21c0e-23b0-ebe0-bd4e-5b21b318609e" executionId="da3e9c48-1948-476a-b6e0-94e2e9df0da6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7440bff-b3ba-f414-444a-d3d1873c27af" executionId="284c22a9-e066-46e0-815f-7e74d0ebe5f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="488a1913-84c9-09eb-89da-96333d55fb3a" executionId="023cbfd0-c0ae-4737-b228-62979f4b90df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4dd8adb1-73a3-c556-bf84-1aee2030129d" executionId="45018e8f-d4f4-48e6-9f03-0e562b257ab4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cde368b6-94fe-d42b-22eb-36d614168eb3" executionId="3aafa999-505a-4ce2-aaf6-186658ce9336" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73ce09c4-d27e-924b-69c5-107eeb222f44" executionId="422a336f-a7e5-45b6-a01b-55e0c57f8e07" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d354352-d5ba-f389-2917-325a484869f7" executionId="1f192aeb-8362-4a87-87da-afe6ec7aea5a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="920c864d-6f44-cb13-42f9-96fb99011693" executionId="a7c211c8-0eaa-4574-87db-bdae48f107c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9043351c-a4b6-5eb6-314f-5a94aa9be269" executionId="5b0be02d-5eaf-48d7-a725-837f34bf681e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e46bc3b-7f69-060d-99f0-02d37eef0be4" executionId="390005c5-f87f-497c-8829-bb693933df7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0cdc302-85a5-2a67-02c4-e83a96f7de54" executionId="57c99339-e2f8-4c50-b505-b3b62739be67" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df505511-35c0-a7e0-b615-1e6c0e25e540" executionId="db83789e-e1a5-4267-a87c-dba4c38fdeba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23bd72a0-5139-1e24-0539-077ab2964978" executionId="06327c74-f647-42bd-a00e-44df1b132d87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="615679af-ce32-8e6d-e519-c7f461f76a55" executionId="46fd6048-8c24-4614-bc27-23563c388ce5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96d79bb3-2bf2-8dd5-9860-255726ae950b" executionId="c66295ba-4052-4d89-9809-ac609cdd6d26" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="333dcc40-58d6-3a15-1a2d-e6cfcd044b19" executionId="5f8af128-2fbc-427f-9541-846a13a412f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94faa1e5-8224-d233-5717-c974efbe176f" executionId="0f1756ea-c23f-4f1a-a64b-aeb21b6e2063" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27b2f1e3-d7d4-8de2-c93e-8abedc94555d" executionId="be114678-bfc7-4d71-ad1c-f15ae6d7e137" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e937bf57-2eaf-552e-fd33-121f04a5d964" executionId="67466b35-cec9-4bb1-bde1-f9ca026bfcf0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c0cd6a60-d0f4-ef56-fde8-35be3dbebbba" executionId="aa9d6d49-0fbc-40b2-a5bd-648d25271975" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="43" executed="43" passed="43" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <CollectorDataEntries>
+      <Collector agentName="15359ddd77fb" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="15359ddd77fb/coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

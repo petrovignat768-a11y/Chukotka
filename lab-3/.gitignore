@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+.nuget/
+.dotnet-home/
+.home/
+.tmp/
+.runtime/
+TestResults/*
+!TestResults/lab3.trx

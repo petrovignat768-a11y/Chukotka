@@ -1,0 +1,135 @@
+Feature: Преобразование длины между единицами СИ и США # features/length_conversion.feature:1
+  Чтобы сравнивать значения длины, пользователь переводит величину
+  из одной поддерживаемой единицы в другую.
+  Scenario Outline: Корректное преобразование длины -- @1.1 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:13
+    Given исходное значение "1"                                                                    # None
+    And единицы измерения "m" и "cm"                                                               # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "100" с точностью "0.000000000001"                                        # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.2 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:14
+    Given исходное значение "250"                                                                  # None
+    And единицы измерения "cm" и "m"                                                               # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "2.5" с точностью "0.000000000001"                                        # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.3 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:15
+    Given исходное значение "1"                                                                    # None
+    And единицы измерения "in" и "mm"                                                              # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "25.4" с точностью "0.000000000001"                                       # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.4 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:16
+    Given исходное значение "12"                                                                   # None
+    And единицы измерения "in" и "ft"                                                              # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "1" с точностью "0.000000000001"                                          # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.5 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:17
+    Given исходное значение "1"                                                                    # None
+    And единицы измерения "ft" и "m"                                                               # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "0.3048" с точностью "0.000000000001"                                     # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.6 Метры, сантиметры, дюймы, футы и мили  # features/length_conversion.feature:18
+    Given исходное значение "1"                                                                    # None
+    And единицы измерения "mi" и "km"                                                              # None
+    When выполняется конвертация                                                                   # None
+    Then результат равен "1.609344" с точностью "0.000000000001"                                   # None
+
+
+You can implement step definitions for undefined steps with these snippets:
+
+@given(u'исходное значение "1"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given исходное значение "1"')
+
+
+@given(u'единицы измерения "m" и "cm"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "m" и "cm"')
+
+
+@when(u'выполняется конвертация')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When выполняется конвертация')
+
+
+@then(u'результат равен "100" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "100" с точностью "0.000000000001"')
+
+
+@given(u'исходное значение "250"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given исходное значение "250"')
+
+
+@given(u'единицы измерения "cm" и "m"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "cm" и "m"')
+
+
+@then(u'результат равен "2.5" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "2.5" с точностью "0.000000000001"')
+
+
+@given(u'единицы измерения "in" и "mm"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "in" и "mm"')
+
+
+@then(u'результат равен "25.4" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "25.4" с точностью "0.000000000001"')
+
+
+@given(u'исходное значение "12"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given исходное значение "12"')
+
+
+@given(u'единицы измерения "in" и "ft"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "in" и "ft"')
+
+
+@then(u'результат равен "1" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "1" с точностью "0.000000000001"')
+
+
+@given(u'единицы измерения "ft" и "m"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "ft" и "m"')
+
+
+@then(u'результат равен "0.3048" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "0.3048" с точностью "0.000000000001"')
+
+
+@given(u'единицы измерения "mi" и "km"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Given единицы измерения "mi" и "km"')
+
+
+@then(u'результат равен "1.609344" с точностью "0.000000000001"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then результат равен "1.609344" с точностью "0.000000000001"')
+
+
+Failing scenarios:
+  features/length_conversion.feature:13  Корректное преобразование длины -- @1.1 Метры, сантиметры, дюймы, футы и мили
+  features/length_conversion.feature:14  Корректное преобразование длины -- @1.2 Метры, сантиметры, дюймы, футы и мили
+  features/length_conversion.feature:15  Корректное преобразование длины -- @1.3 Метры, сантиметры, дюймы, футы и мили
+  features/length_conversion.feature:16  Корректное преобразование длины -- @1.4 Метры, сантиметры, дюймы, футы и мили
+  features/length_conversion.feature:17  Корректное преобразование длины -- @1.5 Метры, сантиметры, дюймы, футы и мили
+  features/length_conversion.feature:18  Корректное преобразование длины -- @1.6 Метры, сантиметры, дюймы, футы и мили
+
+0 features passed, 1 failed, 0 skipped
+0 scenarios passed, 6 failed, 0 skipped
+0 steps passed, 0 failed, 0 skipped, 24 undefined
+Took 0m0.000s
+Фактический код выхода: 1

@@ -1,0 +1,15 @@
+$ python3 -B -m unittest discover -s tests -v
+test_centimeters_to_meters (test_converter.BasicMetricTests.test_centimeters_to_meters) ... ok
+test_meters_to_centimeters (test_converter.BasicMetricTests.test_meters_to_centimeters) ... ok
+test_cross_system_conversion (test_converter.UnitSystemTests.test_cross_system_conversion) ... ok
+test_identity_for_all_units (test_converter.UnitSystemTests.test_identity_for_all_units) ... ok
+test_international_imperial_factors_in_meters (test_converter.UnitSystemTests.test_international_imperial_factors_in_meters) ... ok
+test_si_millimeters_and_kilometers (test_converter.UnitSystemTests.test_si_millimeters_and_kilometers) ... ok
+test_traditional_russian_factors_in_meters (test_converter.UnitSystemTests.test_traditional_russian_factors_in_meters) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK
+
+EXIT_CODE=0

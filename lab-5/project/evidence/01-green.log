@@ -1,0 +1,10 @@
+$ python3 -B -m unittest discover -s tests -v
+test_centimeters_to_meters (test_converter.BasicMetricTests.test_centimeters_to_meters) ... ok
+test_meters_to_centimeters (test_converter.BasicMetricTests.test_meters_to_centimeters) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+
+EXIT_CODE=0

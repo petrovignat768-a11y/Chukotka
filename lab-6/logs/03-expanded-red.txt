@@ -1,0 +1,531 @@
+Feature: Преобразование длины между системами мер # features/length_conversion.feature:1
+  Чтобы сравнивать значения длины, пользователь переводит величину
+  из единиц СИ, США и выбранных старорусских единиц.
+  Scenario Outline: Корректное преобразование длины -- @1.1 Между системами и внутри них  # features/length_conversion.feature:13
+    Given исходное значение "1"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "m" и "cm"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "100" с точностью "0"                                            # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.2 Между системами и внутри них  # features/length_conversion.feature:14
+    Given исходное значение "250"                                                         # features/steps/length_steps.py:10
+    And единицы измерения "cm" и "m"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "2.5" с точностью "0"                                            # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.3 Между системами и внутри них  # features/length_conversion.feature:15
+    Given исходное значение "5.5"                                                         # features/steps/length_steps.py:10
+    And единицы измерения "km" и "m"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "5500" с точностью "0"                                           # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.4 Между системами и внутри них  # features/length_conversion.feature:16
+    Given исходное значение "1"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "cm" и "cm"                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "1" с точностью "0"                                              # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.5 Между системами и внутри них  # features/length_conversion.feature:17
+    Given исходное значение "1"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "in" и "mm"                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "25.4" с точностью "0"                                           # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.6 Между системами и внутри них  # features/length_conversion.feature:18
+    Given исходное значение "12"                                                          # features/steps/length_steps.py:10
+    And единицы измерения "in" и "ft"                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "1" с точностью "0"                                              # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.7 Между системами и внутри них  # features/length_conversion.feature:19
+    Given исходное значение "1"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "ft" и "m"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "0.3048" с точностью "0"                                         # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.8 Между системами и внутри них  # features/length_conversion.feature:20
+    Given исходное значение "1"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "mi" и "km"                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "1.609344" с точностью "0"                                       # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.9 Между системами и внутри них  # features/length_conversion.feature:21
+    Given исходное значение "2.5"                                                         # features/steps/length_steps.py:10
+    And единицы измерения "yd" и "in"                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                          # features/steps/length_steps.py:22
+    Then результат равен "90" с точностью "0"                                             # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.10 Между системами и внутри них  # features/length_conversion.feature:22
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "mi" и "ft"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "5280" с точностью "0"                                            # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.11 Между системами и внутри них  # features/length_conversion.feature:23
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "3.280839895013" с точностью "0.000000000001"                     # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @1.12 Между системами и внутри них  # features/length_conversion.feature:24
+    Given исходное значение "16"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "vershok" и "arshin"                                             # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'vershok'
+
+    Then результат равен "1" с точностью "0"                                               # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.13 Между системами и внутри них  # features/length_conversion.feature:25
+    Given исходное значение "3"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "arshin" и "sazhen"                                              # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'arshin'
+
+    Then результат равен "1" с точностью "0"                                               # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.14 Между системами и внутри них  # features/length_conversion.feature:26
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "versta" и "sazhen"                                              # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'versta'
+
+    Then результат равен "500" с точностью "0"                                             # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.15 Между системами и внутри них  # features/length_conversion.feature:27
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "versta" и "km"                                                  # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'versta'
+
+    Then результат равен "1.0668" с точностью "0"                                          # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.16 Между системами и внутри них  # features/length_conversion.feature:28
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "arshin" и "in"                                                  # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'arshin'
+
+    Then результат равен "28" с точностью "0"                                              # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.17 Между системами и внутри них  # features/length_conversion.feature:29
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "sazhen" и "ft"                                                  # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'sazhen'
+
+    Then результат равен "7" с точностью "0"                                               # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.18 Между системами и внутри них  # features/length_conversion.feature:30
+    Given исходное значение "0.1"                                                          # features/steps/length_steps.py:10
+    And единицы измерения "arshin" и "cm"                                                  # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'arshin'
+
+    Then результат равен "7.112" с точностью "0"                                           # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.19 Между системами и внутри них  # features/length_conversion.feature:31
+    Given исходное значение "50"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "vershok" и "cm"                                                 # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'vershok'
+
+    Then результат равен "222.25" с точностью "0"                                          # None
+
+  Scenario Outline: Корректное преобразование длины -- @1.20 Между системами и внутри них  # features/length_conversion.feature:32
+    Given исходное значение "1"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "M" и "cm"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'M'
+
+    Then результат равен "100" с точностью "0"                                             # None
+
+  Scenario Outline: Корректное преобразование длины -- @2.1 Граничные допустимые значения  # features/length_conversion.feature:36
+    Given исходное значение "0"                                                            # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "0" с точностью "0"                                               # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @2.2 Граничные допустимые значения  # features/length_conversion.feature:37
+    Given исходное значение "-0"                                                           # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "0" с точностью "0"                                               # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @2.3 Граничные допустимые значения  # features/length_conversion.feature:38
+    Given исходное значение "0.000000000001"                                               # features/steps/length_steps.py:10
+    And единицы измерения "m" и "mm"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "0.000000001" с точностью "0"                                     # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @2.4 Граничные допустимые значения  # features/length_conversion.feature:39
+    Given исходное значение "1000000000000"                                                # features/steps/length_steps.py:10
+    And единицы измерения "mm" и "km"                                                      # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "1000000" с точностью "0"                                         # features/steps/length_steps.py:27
+
+  Scenario Outline: Корректное преобразование длины -- @2.5 Граничные допустимые значения  # features/length_conversion.feature:40
+    Given исходное значение "1e-12"                                                        # features/steps/length_steps.py:10
+    And единицы измерения "m" и "mm"                                                       # features/steps/length_steps.py:16
+    When выполняется конвертация                                                           # features/steps/length_steps.py:22
+    Then результат равен "0.000000001" с точностью "0"                                     # features/steps/length_steps.py:27
+
+  Scenario Outline: Обратное преобразование восстанавливает значение -- @1.1 Обратные переводы между системами  # features/length_conversion.feature:50
+    Given исходное значение "3.5"                                                                               # features/steps/length_steps.py:10
+    And единицы измерения "m" и "in"                                                                            # features/steps/length_steps.py:16
+    When величина переводится в целевую единицу и обратно                                                       # None
+    Then результат равен "3.5" с точностью "0.000000000000000000000001"                                         # None
+
+  Scenario Outline: Обратное преобразование восстанавливает значение -- @1.2 Обратные переводы между системами  # features/length_conversion.feature:51
+    Given исходное значение "2.2"                                                                               # features/steps/length_steps.py:10
+    And единицы измерения "arshin" и "km"                                                                       # features/steps/length_steps.py:16
+    When величина переводится в целевую единицу и обратно                                                       # None
+    Then результат равен "2.2" с точностью "0.000000000000000000000001"                                         # None
+
+  Scenario Outline: Обратное преобразование восстанавливает значение -- @1.3 Обратные переводы между системами  # features/length_conversion.feature:52
+    Given исходное значение "5280"                                                                              # features/steps/length_steps.py:10
+    And единицы измерения "ft" и "mi"                                                                           # features/steps/length_steps.py:16
+    When величина переводится в целевую единицу и обратно                                                       # None
+    Then результат равен "5280" с точностью "0.000000000000000000000001"                                        # None
+
+  Scenario Outline: Обратное преобразование восстанавливает значение -- @1.4 Обратные переводы между системами  # features/length_conversion.feature:53
+    Given исходное значение "1"                                                                                 # features/steps/length_steps.py:10
+    And единицы измерения "versta" и "yd"                                                                       # features/steps/length_steps.py:16
+    When величина переводится в целевую единицу и обратно                                                       # None
+    Then результат равен "1" с точностью "0.000000000000000000000001"                                           # None
+
+  Scenario Outline: Обратное преобразование восстанавливает значение -- @1.5 Обратные переводы между системами  # features/length_conversion.feature:54
+    Given исходное значение "1"                                                                                 # features/steps/length_steps.py:10
+    And единицы измерения "in" и "mm"                                                                           # features/steps/length_steps.py:16
+    When величина переводится в целевую единицу и обратно                                                       # None
+    Then результат равен "1" с точностью "0.000000000000000000000001"                                           # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.1 Проверка числа, диапазона и единиц  # features/length_conversion.feature:64
+    Given исходное значение "-1"                                                                            # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "negative"                                                                        # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.2 Проверка числа, диапазона и единиц  # features/length_conversion.feature:65
+    Given исходное значение "-0.000000000001"                                                               # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "negative"                                                                        # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.3 Проверка числа, диапазона и единиц  # features/length_conversion.feature:66
+    Given исходное значение "0.0000000000009"                                                               # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "out_of_range"                                                                    # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.4 Проверка числа, диапазона и единиц  # features/length_conversion.feature:67
+    Given исходное значение "1000000000000.1"                                                               # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "out_of_range"                                                                    # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.5 Проверка числа, диапазона и единиц  # features/length_conversion.feature:68
+    Given исходное значение "NaN"                                                                           # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "invalid_number"                                                                  # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.6 Проверка числа, диапазона и единиц  # features/length_conversion.feature:69
+    Given исходное значение "Infinity"                                                                      # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+    Then ошибка имеет код "invalid_number"                                                                  # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.7 Проверка числа, диапазона и единиц  # features/length_conversion.feature:70
+    Given исходное значение "abc"                                                                           # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                 ^^^^^^^^^^^^^^
+      decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+    Then ошибка имеет код "invalid_number"                                                                  # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.8 Проверка числа, диапазона и единиц  # features/length_conversion.feature:71
+    Given исходное значение ""                                                                              # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                 ^^^^^^^^^^^^^^
+      decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+    Then ошибка имеет код "invalid_number"                                                                  # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.9 Проверка числа, диапазона и единиц  # features/length_conversion.feature:72
+    Given исходное значение "1,5"                                                                           # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                        # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                            # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                 ^^^^^^^^^^^^^^
+      decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+    Then ошибка имеет код "invalid_number"                                                                  # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.10 Проверка числа, диапазона и единиц  # features/length_conversion.feature:73
+    Given исходное значение "1"                                                                              # features/steps/length_steps.py:10
+    And единицы измерения "league" и "m"                                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                             # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'league'
+
+    Then ошибка имеет код "unknown_unit"                                                                     # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.11 Проверка числа, диапазона и единиц  # features/length_conversion.feature:74
+    Given исходное значение "1"                                                                              # features/steps/length_steps.py:10
+    And единицы измерения "m" и "league"                                                                     # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                             # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                                           ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: 'league'
+
+    Then ошибка имеет код "unknown_unit"                                                                     # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.12 Проверка числа, диапазона и единиц  # features/length_conversion.feature:75
+    Given исходное значение "1"                                                                              # features/steps/length_steps.py:10
+    And единицы измерения "" и "m"                                                                           # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                             # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                                  ~~~~~~~~~~~~~~^^^^^^^^
+      KeyError: ''
+
+    Then ошибка имеет код "unknown_unit"                                                                     # None
+
+  Scenario Outline: Некорректный ввод отклоняется с объяснением -- @1.13 Проверка числа, диапазона и единиц  # features/length_conversion.feature:76
+    Given исходное значение "1e999999999999999999999999999"                                                  # features/steps/length_steps.py:10
+    And единицы измерения "m" и "ft"                                                                         # features/steps/length_steps.py:16
+    When выполняется конвертация                                                                             # features/steps/length_steps.py:22
+      Traceback (most recent call last):
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/home/ubuntu/labs_2_8/lab-6/.venv/lib/python3.12/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/length_steps.py", line 24, in convert
+          context.result = context.converter.convert(context.value, context.source, context.target)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/ubuntu/labs_2_8/lab-6/converter.py", line 23, in convert
+          return Decimal(value) * UNIT_IN_METERS[source] / UNIT_IN_METERS[target]
+                 ^^^^^^^^^^^^^^
+      decimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]
+
+    Then ошибка имеет код "invalid_number"                                                                   # None
+
+
+You can implement step definitions for undefined steps with these snippets:
+
+@when(u'величина переводится в целевую единицу и обратно')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When величина переводится в целевую единицу и обратно')
+
+
+@then(u'ошибка имеет код "negative"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then ошибка имеет код "negative"')
+
+
+@then(u'ошибка имеет код "out_of_range"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then ошибка имеет код "out_of_range"')
+
+
+@then(u'ошибка имеет код "invalid_number"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then ошибка имеет код "invalid_number"')
+
+
+@then(u'ошибка имеет код "unknown_unit"')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then ошибка имеет код "unknown_unit"')
+
+
+Failing scenarios:
+  features/length_conversion.feature:24  Корректное преобразование длины -- @1.12 Между системами и внутри них
+  features/length_conversion.feature:25  Корректное преобразование длины -- @1.13 Между системами и внутри них
+  features/length_conversion.feature:26  Корректное преобразование длины -- @1.14 Между системами и внутри них
+  features/length_conversion.feature:27  Корректное преобразование длины -- @1.15 Между системами и внутри них
+  features/length_conversion.feature:28  Корректное преобразование длины -- @1.16 Между системами и внутри них
+  features/length_conversion.feature:29  Корректное преобразование длины -- @1.17 Между системами и внутри них
+  features/length_conversion.feature:30  Корректное преобразование длины -- @1.18 Между системами и внутри них
+  features/length_conversion.feature:31  Корректное преобразование длины -- @1.19 Между системами и внутри них
+  features/length_conversion.feature:32  Корректное преобразование длины -- @1.20 Между системами и внутри них
+  features/length_conversion.feature:50  Обратное преобразование восстанавливает значение -- @1.1 Обратные переводы между системами
+  features/length_conversion.feature:51  Обратное преобразование восстанавливает значение -- @1.2 Обратные переводы между системами
+  features/length_conversion.feature:52  Обратное преобразование восстанавливает значение -- @1.3 Обратные переводы между системами
+  features/length_conversion.feature:53  Обратное преобразование восстанавливает значение -- @1.4 Обратные переводы между системами
+  features/length_conversion.feature:54  Обратное преобразование восстанавливает значение -- @1.5 Обратные переводы между системами
+  features/length_conversion.feature:64  Некорректный ввод отклоняется с объяснением -- @1.1 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:65  Некорректный ввод отклоняется с объяснением -- @1.2 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:66  Некорректный ввод отклоняется с объяснением -- @1.3 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:67  Некорректный ввод отклоняется с объяснением -- @1.4 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:68  Некорректный ввод отклоняется с объяснением -- @1.5 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:69  Некорректный ввод отклоняется с объяснением -- @1.6 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:70  Некорректный ввод отклоняется с объяснением -- @1.7 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:71  Некорректный ввод отклоняется с объяснением -- @1.8 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:72  Некорректный ввод отклоняется с объяснением -- @1.9 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:73  Некорректный ввод отклоняется с объяснением -- @1.10 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:74  Некорректный ввод отклоняется с объяснением -- @1.11 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:75  Некорректный ввод отклоняется с объяснением -- @1.12 Проверка числа, диапазона и единиц
+  features/length_conversion.feature:76  Некорректный ввод отклоняется с объяснением -- @1.13 Проверка числа, диапазона и единиц
+
+0 features passed, 1 failed, 0 skipped
+16 scenarios passed, 27 failed, 0 skipped
+124 steps passed, 16 failed, 14 skipped, 18 undefined
+Took 0m0.007s
+Фактический код выхода: 1

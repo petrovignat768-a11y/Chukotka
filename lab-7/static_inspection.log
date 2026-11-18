@@ -1,0 +1,29 @@
+=== Static PE type ===
+/home/ubuntu/chukotka-source/Petrov/todo_app.exe: PE32+ executable (GUI) x86-64, for MS Windows, 7 sections
+
+=== Selected printable strings (indicators only) ===
+PYINSTALLER_SUPPRESS_SPLASH_SCREEN
+PYINSTALLER_RESET_ENVIRONMENT
+PYINSTALLER_STRICT_UNPACK_MODE
+Could not load PyInstaller's embedded PKG archive from the executable (%s)
+Could not side-load PyInstaller's PKG archive from external file (%s)
+_pyinstaller_pyz
+PYINSTALLER_SPLASH_SCREEN_CENTER
+:Tk8 
+spyi_rth__tkinter
+b_tkinter.pyd
+bpython313.dll
+btcl86t.dll
+btcl8\8.4\platform-1.0.19.tm
+btcl8\8.4\platform\shell-1.1.4.tm
+btcl8\8.5\msgcat-1.6.1.tm
+btcl8\8.5\tcltest-2.5.8.tm
+btcl8\8.6\http-2.9.8.tm
+btk86t.dll
+9python313.dll
+
+=== Repository files, depth 1 ===
+Specification.md
+readme.md
+todo_app.exe
+use_case.png

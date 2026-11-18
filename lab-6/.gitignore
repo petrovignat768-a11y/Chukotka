@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.bundle
+logs/07-bundle-verification.txt
+_bundle-verify/
