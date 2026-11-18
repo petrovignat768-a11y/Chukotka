@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.petrov.tasktracker","l":"TaskTracker.Outcome"},{"p":"ru.petrov.tasktracker","l":"TaskTracker.Result"},{"p":"ru.petrov.tasktracker","l":"TaskTracker.Task"},{"p":"ru.petrov.tasktracker","l":"TaskTracker"}];updateSearchResults();
